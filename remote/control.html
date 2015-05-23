@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <title>MoboRemote</title>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
+</head>
+
+    <body>
+        <div data-role="page" id="splash" data-theme='b'>        
+            <div data-role="content" data-theme='b'>
+                Loading...
+            </div>
+        </div>
+        <!-- ################################################ -->        
+        <div data-role="page" id="search" data-theme='b'>        
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <form>
+                    <table>
+                        <td width="90%"><input id="searchKeyword" placeholder='search...' type="text"/></td>
+                        <td><input type="button" id="searchBtn" value="search"></td>
+                    </table>
+                </form>
+            </div>
+        
+            <div data-role="content" data-theme='b'>
+                <ul id="searchResult" data-role="listview" class="ui-overlay-shadow" data-split-icon="plus">
+                </ul>
+            </div>
+            
+            <div data-role="popup" id="searchItemAdded">search item added</div>
+            
+            <div data-role="footer" data-position="fixed" data-theme='b'>
+                <nav data-role="navbar">
+                    <ul>
+                        <li><a data-icon="plus" href="#playList"></a></li>
+                        <li><a data-icon="grid" href="#remote"></a></li>
+                        <li><a data-icon="info" href="#info"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        
+        
+        <!-- ################################################ -->
+        <div data-role="page" id="playList" data-theme='b'>
+                <div data-role="header" data-position="fixed" data-theme="b">
+                    <form>
+                        <table>
+                            <td width="90%"><input type="url" id="url" placeholder="copy the url of a youtube video here ...  " data-mini="true" data-inline="true"></td>
+                            <td><input type="button" id="addUrl" value="Add Video" data-mini="true" data-inline="true" data-icon="plus" data-iconpos="notext"></td>
+                        </table>
+                    </form>
+                </div>
+                <div data-role="content" data-theme="b">
+                    <ul id="videoList" data-role="listview" class="ui-overlay-shadow" data-split-icon="delete">
+                    </ul>                    
+                </div>
+                <div data-role="footer" data-position="fixed">
+                    <nav data-role="navbar">
+                        <ul>
+                            <li><a data-icon="search" href="#search"></a></li>
+                            <li><a data-icon="grid" href="#remote"></a></li>
+                            <li><a data-icon="info" href="#info"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>      
+        
+        <!-- ################################################ -->
+        
+        <div data-role="page" id="remote" data-theme='b'>
+                <div data-role="header" data-position="fixed">
+                    <fieldset id="connectForm" data-role="collapsible" data-mini="true" data-iconpos="right" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                        <legend>Connect to monitor</legend>
+                        <table>
+                            <td><input type="text" id="monitorId" value="" placeholder="Monitor ID..." data-mini="true" data-inline="true"></td>
+                            <td><input type="button" id="connect" data-icon="check" data-iconpos="notext" data-mini="true" data-inline="true"></td>
+                        </table>
+                    </fieldset>
+                </div>
+            
+                <div id="connectStatus" data-role="popup" data-theme="none" data-overlay-theme="b" data-transition="fade" class="ui-content">
+                    connecting...
+                </div>
+                <div data-role="content" class="noMargins">
+		<form> 
+                    
+                    <div class="align-right" style="padding-right: 5px"><a href="" id="speaker" data-func="speaker"><img id="speakerImg" src="css/speaker.png" class="imgIcon"></a></div>
+                    <div class="ui-grid-solo">
+                        <div class="ui-block-a align-center"><a href="" data-play="pause" id="playPause"><img id="playPauseImg" src="css/play.png" class="imgbtnL1"></a></div>
+                    </div>
+                 
+                    <input id="volume" min="0" max="100" value="50" type="range" data-role="none" data-mini="true" data-theme="a" data-track-theme="b" data-highlight="true" style="display: none !important" />
+                    
+                    <div id="carousel">
+                        <ul>    
+                        </ul>
+                    </div>
+                    
+		</form>
+                </div>
+
+                <div data-role="footer" data-position="fixed">
+                    <nav data-role="navbar">
+                        <ul>
+                            <li><a data-icon="plus" href="#playList"></a></li>
+                            <li><a data-icon="search" href="#search"></a></li>
+                            <li><a data-icon="info" href="#info"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+	</div>
+        
+        <!-- ################################################ -->
+        <div data-role="page" id="info" data-theme='a'>
+                <div data-role="header" data-position="fixed">
+                    <h1>Information</h1>
+                </div>
+                <div data-role="content">
+                    
+                </div>
+                <div data-role="footer" data-position="fixed">
+                    <nav data-role="navbar">
+                        <ul>
+                            <li><a data-icon="plus" href="#playList"></a></li>
+                            <li><a data-icon="grid" href="#remote" ></a></li>
+                            <li><a data-icon="search" href="#search"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </div>
+        
+        <script src="js/require.js" data-main="js/app"></script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,75 @@
+.imgbtnL1 {
+    width: 70px; 
+    height: 70px;
+    text-align: center;
+}
+
+.imgbtnL2 {
+    width: 60px; 
+    height: 60px;
+    text-align: center;
+}
+
+.img {
+    height: 60px;
+    text-align: center;
+}
+
+.imgIcon {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+/* Hide the delete button on touch devices */
+ul.touch li.ui-li-has-alt a.delete {
+    display: none;
+}
+ul.touch li.ui-li-has-alt a.ui-btn {
+    margin-right:0;
+}
+
+            .slideImg {
+                width: 100px;
+                padding: 5px 5px;
+                //margin: 0px 0px;
+                //border: red solid 1px;
+                box-sizing: border-box;
+                //height: 80px;
+            }
+            
+            #carousel {
+                width: 300px;
+                overflow: hidden;
+                border: black solid 1px;
+                margin: 0;
+            }
+            
+            #carousel ul{
+                width: 2000px;
+                padding: 0;
+                margin: 0;
+            }
+            
+            #carousel ul li{
+                list-style: none;
+                float: left;
+            }
+            
+            .noMargins {
+                //margin: 0;
+                padding: 0;
+            }
+            
