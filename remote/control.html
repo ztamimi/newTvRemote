@@ -14,7 +14,7 @@
             </div>
         </div>
         <!-- ################################################ -->        
-        <div data-role="page" id="search" data-theme='b'>        
+        <div data-role="page" id="searchPage" data-theme='b'>        
             <div data-role="header" data-position="fixed" data-theme="b">
                 <form>
                     <table>
@@ -34,9 +34,9 @@
             <div data-role="footer" data-position="fixed" data-theme='b'>
                 <nav data-role="navbar">
                     <ul>
-                        <li><a data-icon="plus" href="#playList"></a></li>
-                        <li><a data-icon="grid" href="#remote"></a></li>
-                        <li><a data-icon="info" href="#info"></a></li>
+                        <li><a data-icon="search" href="#searchPage" data-theme="a"></a></li>
+                        <li><a data-icon="grid" href="#remotePage"></a></li>
+                        <li><a data-icon="plus" href="#playListPage"></a></li>
                     </ul>
                 </nav>
             </div>
@@ -45,7 +45,7 @@
         
         
         <!-- ################################################ -->
-        <div data-role="page" id="playList" data-theme='b'>
+        <div data-role="page" id="playListPage" data-theme='b'>
                 <div data-role="header" data-position="fixed" data-theme="b">
                     <form>
                         <table>
@@ -61,9 +61,9 @@
                 <div data-role="footer" data-position="fixed">
                     <nav data-role="navbar">
                         <ul>
-                            <li><a data-icon="search" href="#search"></a></li>
-                            <li><a data-icon="grid" href="#remote"></a></li>
-                            <li><a data-icon="info" href="#info"></a></li>
+                            <li><a data-icon="search" href="#searchPage"></a></li>
+                            <li><a data-icon="grid" href="#remotePage"></a></li>
+                            <li><a data-icon="plus" href="#playListPage" data-theme="a"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -71,7 +71,7 @@
         
         <!-- ################################################ -->
         
-        <div data-role="page" id="remote" data-theme='b'>
+        <div data-role="page" id="remotePage" data-theme='b'>
                 <div data-role="header" data-position="fixed">
                     <fieldset id="connectForm" data-role="collapsible" data-mini="true" data-iconpos="right" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
                         <legend>Connect to monitor</legend>
@@ -106,9 +106,9 @@
                 <div data-role="footer" data-position="fixed">
                     <nav data-role="navbar">
                         <ul>
-                            <li><a data-icon="plus" href="#playList"></a></li>
-                            <li><a data-icon="search" href="#search"></a></li>
-                            <li><a data-icon="info" href="#info"></a></li>
+                            <li><a data-icon="search" href="#searchPage"></a></li>
+                            <li><a data-icon="grid" href="#remotePage" data-theme="a"></a></li>
+                            <li><a data-icon="plus" href="#playListPage"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -125,9 +125,9 @@
                 <div data-role="footer" data-position="fixed">
                     <nav data-role="navbar">
                         <ul>
-                            <li><a data-icon="plus" href="#playList"></a></li>
-                            <li><a data-icon="grid" href="#remote" ></a></li>
                             <li><a data-icon="search" href="#search"></a></li>
+                            <li><a data-icon="grid" href="#remote"></a></li>
+                            <li><a data-icon="plus" href="#playList"></a></li>
                         </ul>
                     </nav>
                 </div>

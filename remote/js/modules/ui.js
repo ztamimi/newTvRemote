@@ -51,8 +51,21 @@ define(["modules/control", "jquery"], function(control, $) {
                 $( window ).on( "orientationchange resize", function( event ) {
                     console.log("orientation change");
                     ui.initCarousel();
-                });                
+                });
+                
+                // slide
+                $("#remotePage").on("swiperight", ui.goSearch);
+                $("#remotePage").on("swipeleft", ui.goPlayList);
+                
 	};
+        /////////// transitions /////////////
+        ui.goSearch = function() {
+            $.mobile.changePage("#searchPage", {transition: "slide", changeHash: false, reverse: "true"});
+        };
+        
+        ui.goPlayList = function() {
+            $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false});
+        };
         
         /////////// ui methods //////////////
         
@@ -269,7 +282,7 @@ define(["modules/control", "jquery"], function(control, $) {
         };
             
         ui.slide = function() {
-            $.mobile.changePage("#remote", {transition: "slide", changeHash: false});
+            $.mobile.changePage("#remotePage", {transition: "slide", changeHash: false});
         };
         
     return ui;

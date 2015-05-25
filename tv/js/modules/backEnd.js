@@ -37,7 +37,7 @@ define(["firebase"], function() {
         };
         
         backEnd.disconnect = function() {
-            $.mobile.changePage("#welcome", "fade");
+            $.mobile.changePage("#welcome", {transition: "fade", changeHash: false});
             backEnd.disconnectCallback();
             backEnd.sessionId = null;
             backEnd.monitorRef.update({"connectTo": 0});
@@ -54,7 +54,7 @@ define(["firebase"], function() {
                     backEnd.sessionId = value;
                 }
                 else if (key === 'status' && value === 1 && backEnd.sessionId !== null) {
-                    $.mobile.changePage("#tv", "fade");
+                    $.mobile.changePage("#tv", {transition: "fade", changeHash: false});
                     backEnd.monitorRef.update({"status": 2});
                     backEnd.monitorRef.onDisconnect().update({"status": 0});
                     backEnd.monitorRef.onDisconnect().update({"connectTo": 0});

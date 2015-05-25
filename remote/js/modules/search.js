@@ -14,7 +14,18 @@ define(["modules/list", "modules/ui"], function(list, ui) {
             }
         });
         search.list.on('click', 'li a.add', search.clickAddVideo);
+        
+        $("#searchPage").on("swiperight", search.goPlayList);
+        $("#searchPage").on("swipeleft", search.goRemote);
     };
+    
+        search.goRemote = function() {
+            $.mobile.changePage("#remotePage", {transition: "slide", changeHash: false});
+        };
+        
+        search.goPlayList = function() {
+            $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false, reverse: true});
+        };
     
     search.clickSearch = function() {
         var keyword = search.keyword.val();

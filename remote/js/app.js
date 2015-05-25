@@ -16,7 +16,7 @@ requirejs(["jqueryMobile"]);
 require(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui', 'modules/list', 'modules/search'], function(utilities, dBackend, control, ui, list, search) {
         
     setTimeout(function(){
-        $.mobile.changePage("#remote", "fade");
+        $.mobile.changePage("#remotePage", {transition: "fade", changeHash: false});
         console.log("slide");
     }, 2000);
     

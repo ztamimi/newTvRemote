@@ -25,7 +25,21 @@ define(["modules/control", "modules/ui", "jquery"], function(control, ui, $) {
             });
             list.videoList.on('click', 'li a.data', list.clickItem);
             list.videoList.on('click', 'li a.delete', list.clickDeleteVideo);
+                
+            $("#playListPage").on("swiperight", list.goRemote);
+            $("#playListPage").on("swipeleft", list.goSearch);
+            
 	};
+        
+        /////////// transitions /////////////
+        list.goSearch = function() {
+            $.mobile.changePage("#searchPage", {transition: "slide", changeHash: false});
+        };
+        
+        list.goRemote = function() {
+            $.mobile.changePage("#remotePage", {transition: "slide", changeHash: false, reverse: "true"});
+        };
+        
         
         list.enable = function(value) {
             if (value) {
