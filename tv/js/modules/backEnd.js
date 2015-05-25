@@ -10,16 +10,6 @@ define(["firebase"], function() {
             backEnd.listRef = backEnd.ref.child("playList");
             
         };
-        /*
-        backEnd.connect = function(monitorId) {
-            var temp = backEnd.url + backEnd.appName + '/' + monitorId + '/';
-            backEnd.monitorRef = new Firebase(temp);
-            
-            backEnd.monitorRef.update({"connectTo": 0});
-            
-            backEnd.monitorRef.on('child_changed', backEnd.onConnect);
-        };
-        */
         
         backEnd.generateId = function() {
                 var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
@@ -48,6 +38,7 @@ define(["firebase"], function() {
         
         backEnd.disconnect = function() {
             $.mobile.changePage("#welcome", "fade");
+            backEnd.disconnectCallback();
             backEnd.sessionId = null;
             backEnd.monitorRef.update({"connectTo": 0});
             backEnd.monitorRef.update({"status": 0});
@@ -65,16 +56,22 @@ define(["firebase"], function() {
                 else if (key === 'status' && value === 1 && backEnd.sessionId !== null) {
                     $.mobile.changePage("#tv", "fade");
                     backEnd.monitorRef.update({"status": 2});
+                    backEnd.monitorRef.onDisconnect().update({"status": 0});
+                    backEnd.monitorRef.onDisconnect().update({"connectTo": 0});
                     backEnd.init();
-                    backEnd.connectedCallback();
+                    backEnd.connectCallback();
                 }
                 else if (key === 'status' && value === 3) {
                     backEnd.disconnect();
                 }
         };
         
-        backEnd.setConnectedCallback = function(callback) {
-            backEnd.connectedCallback = callback;
+        backEnd.setConnectCallback = function(callback) {
+            backEnd.connectCallback = callback;
+        };
+        
+        backEnd.setDisconnectCallback = function(callback) {
+            backEnd.disconnectCallback = callback;
         };
         
         backEnd.updateValue = function(obj) {

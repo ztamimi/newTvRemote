@@ -24,13 +24,18 @@ require(['modules/utilities', 'modules/backEnd', 'modules/tv', 'modules/ytplayer
     backEnd.setMonitorId(id);
     
     backEnd.listen();
-    backEnd.setConnectedCallback(connected);
+    backEnd.setConnectCallback(onConnect);
+    backEnd.setDisconnectCallback(onDisconnect);
+
     
     
-    
-    function connected() {
+    function onConnect() {
         ytplayer.init();
         ytplayer.setPlayerLoadedCallback(init);
+    };
+    
+    function onDisconnect() {
+        ytplayer.cleanup();
     };
     
     function init() {

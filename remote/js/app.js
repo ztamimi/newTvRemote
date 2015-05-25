@@ -28,6 +28,18 @@ require(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui
     dBackend.sessionId = id; //"abc123";
     dBackend.setUrl('https://blazing-heat-3187.firebaseio.com/');
     dBackend.setAppName('tvRemote');
+    dBackend.setConnectCallback(onConnect);
+    dBackend.setDisconnectCallback(onDisconnect);
+    
+    function onConnect() {
+        ui.enable(true);
+        list.enable(false);
+    };
+    
+    function onDisconnect() {
+        ui.enable(false);
+        list.enable(false);
+    };
 
     list.init();
     ui.init();

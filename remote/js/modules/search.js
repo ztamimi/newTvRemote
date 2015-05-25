@@ -7,11 +7,19 @@ define(["modules/list", "modules/ui"], function(list, ui) {
         search.keyword = $("#searchKeyword");
     
         $("#searchBtn").on('click', search.clickSearch);
+        search.keyword.keypress(function( event ) {
+            if (event.which == 13) {
+                event.preventDefault();
+                search.clickSearch();
+            }
+        });
         search.list.on('click', 'li a.add', search.clickAddVideo);
     };
     
     search.clickSearch = function() {
         var keyword = search.keyword.val();
+        if (!keyword)
+            return;
         console.log(keyword);
         search.list.empty();
         search.search(keyword);

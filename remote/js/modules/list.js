@@ -3,23 +3,42 @@ define(["modules/control", "modules/ui", "jquery"], function(control, ui, $) {
 	var list = {};
 
 	list.init = function() {
-            list.addUrlBtn = document.getElementById("addUrl");
-            list.urlInput = document.getElementById("url");
+            list.addUrlBtn = $("#addUrl");
+            list.urlInput = $("#url");
             list.videoList = $("#videoList");
+            list.videoList.listview();
             
             list.registerEvents();
             
-            list.initVideoList();
+            //list.initVideoList();
+            
+            list.enable(false);
 	};
 
 	list.registerEvents = function() {
-            list.addUrlBtn.addEventListener("click", list.clickAddVideo, false);
+            list.addUrlBtn.on("click", list.clickAddVideo);
+            list.urlInput.keypress(function( event ) {
+                if (event.which == 13) {
+                    event.preventDefault();
+                    list.clickAddVideo();
+                }
+            });
             list.videoList.on('click', 'li a.data', list.clickItem);
             list.videoList.on('click', 'li a.delete', list.clickDeleteVideo);
 	};
         
+        list.enable = function(value) {
+            if (value) {
+                list.videoList.on('click', 'li a.data', list.clickItem);
+            }
+            else {
+                list.videoList.off('click', 'li a.data', list.clickItem);
+            }
+        };
+        
         list.initVideoList = function() {
             list.videoList.listview();
+            list.enable(false);
         };
         
         list.highLightItem = function(index) {
@@ -81,7 +100,7 @@ define(["modules/control", "modules/ui", "jquery"], function(control, ui, $) {
         };
         
         list.getVideoId = function() {
-            var url = list.urlInput.value;
+            var url = list.urlInput.val();
             var temp = url.toLowerCase();
             
             if (!url)
@@ -93,7 +112,7 @@ define(["modules/control", "modules/ui", "jquery"], function(control, ui, $) {
             }
             
             if (temp.indexOf("youtu.be") >= 0) {
-                var param = url.split(".")[1].split("/")[1]
+                var param = url.split(".")[1].split("/")[1];
                 return param;
             }
 

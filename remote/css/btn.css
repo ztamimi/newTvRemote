@@ -33,6 +33,10 @@
     text-align: center;
 }
 
+.center-div{
+  margin: 0 auto;
+}
+
 /* Hide the delete button on touch devices */
 ul.touch li.ui-li-has-alt a.delete {
     display: none;
@@ -54,7 +58,7 @@ ul.touch li.ui-li-has-alt a.ui-btn {
                 width: 300px;
                 overflow: hidden;
                 border: black solid 1px;
-                margin: 0;
+                margin: 0 auto;
             }
             
             #carousel ul{

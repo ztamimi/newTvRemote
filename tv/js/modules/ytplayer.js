@@ -28,6 +28,10 @@ define(['jquery', 'modules/tv'], function($, tv) {
         }
     };
     
+    ytplayer.cleanup = function() {
+        ytplayer.player.destroy();
+    };
+    
     ytplayer.loadPlayer = function(container, videoId) {
         console.log("************** player loaded *******************");
         ytplayer.player = new YT.Player(container, {

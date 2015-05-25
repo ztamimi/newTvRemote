@@ -9,26 +9,33 @@ define(["firebase"], function() {
             dBackend.dataRef = dBackend.ref.child("data");
             dBackend.listRef = dBackend.ref.child("playList");
             
+            //dBackend.connected = false;
             dBackend.connectBtn = $("#connect");
             dBackend.monitorIdInput = $("#monitorId");
-            dBackend.connectBtn.on("click", dBackend.clickConnect);  
+            dBackend.connectBtn.on("click", dBackend.clickConnect); 
+            dBackend.monitorIdInput.keypress(function( event ) {
+                if (event.which == 13) {
+                    event.preventDefault();
+                    dBackend.clickConnect();
+                }
+            });
         };
         
         //// connect //////////
         dBackend.clickConnect = function() {
             var monitorId = dBackend.monitorIdInput.val();
-            //$("#connectForm").collapsible("collapse");
-            //dBackend.connectTo(monitorId);
+            if (!monitorId)
+                return;
             var temp = dBackend.url + dBackend.appName + '/' + monitorId + '/';
             dBackend.monitorRef = new Firebase(temp);
             $.mobile.loading('show');
             dBackend.monitorRef.once('value', function(snapshot) {
-                //$("#connectStatus").popup("open", {"positionTo": "#connectForm"});
+                
                 if (snapshot.hasChild('connectTo')) {
                     if (snapshot.child('status').val() === 0) {
                         dBackend.monitorRef.update({"connectTo": dBackend.sessionId});
                         dBackend.monitorRef.update({"status": 1});
-                        dBackend.monitorRef.on('child_changed', dBackend.onConnect);
+                        dBackend.monitorRef.on('child_changed', dBackend.onStatusChange);
                     }
                     else 
                         dBackend.connectError(1)
@@ -38,19 +45,20 @@ define(["firebase"], function() {
             });
         };
         
-        dBackend.onConnect = function(snapshot) {
+        dBackend.onStatusChange = function(snapshot) {
             var value = snapshot.val();
             var key = snapshot.key();
             if (key === 'status' && value === 2) {
-                //$("#connectStatus").text("successfully connected to monitor");
                 dBackend.flip(2);
-                /*
-                dBackend.connectBtn.off("click", dBackend.clickConnect);
-                dBackend.connectBtn.button("option", "icon", "delete");
-                dBackend.connectBtn.on("click", dBackend.clickDisconnect);
-                */
-                //$('#connectStatus').popup("close");
+                dBackend.connectCallback();
+                dBackend.monitorRef.onDisconnect().update({"status": 3});
                 dBackend.connectError(0);
+                return;
+            }
+            if (key === 'status' && value === 0) {
+                dBackend.monitorRef = null;
+                dBackend.flip(1);
+                dBackend.connectError(3);
             }
         };
         
@@ -67,6 +75,9 @@ define(["firebase"], function() {
                 case 2:
                     message = "invalid monitor id";
                     break;
+                case 3:
+                    message = "disconnect from monitor";
+                    break; 
             };
             
             $("#connectStatus").text(message);
@@ -75,14 +86,9 @@ define(["firebase"], function() {
         };
         
         dBackend.clickDisconnect = function() {
+            dBackend.connectError(3);
             dBackend.flip(1);
-            /*
-            $("#connectForm").collapsible("collapse");
-            dBackend.connectBtn.off("click", dBackend.clickDisconnect);
-            dBackend.connectBtn.button("option", "icon", "check");
-            dBackend.connectBtn.on("click", dBackend.clickConnect);
-            */
-            //dBackend.disconnect();
+            dBackend.disconnectCallback();
             dBackend.monitorRef.update({"status": 3});
             dBackend.monitorRef = null;
         };
@@ -101,19 +107,13 @@ define(["firebase"], function() {
             $("#connectForm").collapsible("collapse");
         };
         
-        /*
-        dBackend.connectTo = function(monitorId) {
-            var temp = dBackend.url + dBackend.appName + '/' + monitorId + '/';
-            dBackend.monitorRef = new Firebase(temp);
-            dBackend.monitorRef.on('child_added', dBackend.onConnect);
+        dBackend.setConnectCallback = function(callback) {
+            dBackend.connectCallback = callback;
         };
         
-        dBackend.disconnect = function() {
-            dBackend.monitorRef.update({"connectTo": 0});
-            dBackend.monitorRef = null;
+        dBackend.setDisconnectCallback = function(callback) {
+            dBackend.disconnectCallback = callback;
         };
-        */
-        
         
         dBackend.updateValue = function(obj) {
             dBackend.dataRef.update(obj);

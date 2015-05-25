@@ -15,15 +15,27 @@ define(["modules/control", "jquery"], function(control, $) {
             ui.carousel = $("#carousel");
             ui.list = $("#carousel ul");
             
-            //ui.monitorIdInput = $("#monitorId");
-            //ui.connectBtn = $("#connect");
-            
             ui.registerEvents();
             
-            //ui.initPlayPauseBtn();
-            //ui.initVolumeSlider();
             ui.initCarousel();
+            
+            ui.enable(false);
 	};
+        
+        ui.enable = function(value) {
+            if (value) {
+                ui.volInput.slider("enable");
+                ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
+                ui.speakerBtn.on('click', ui.clickSpeakerBtn);
+                ui.list.on('click', 'li a', ui.clickItem);
+            }
+            else {
+                ui.volInput.slider("disable");
+                ui.playPauseBtn.off('click', ui.clickPlayPauseBtn);                
+                ui.speakerBtn.off('click', ui.clickSpeakerBtn);
+                ui.list.off('click', 'li a', ui.clickItem);
+            }
+        };
         
 	ui.registerEvents = function() {
                 ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
@@ -39,38 +51,9 @@ define(["modules/control", "jquery"], function(control, $) {
                 $( window ).on( "orientationchange resize", function( event ) {
                     console.log("orientation change");
                     ui.initCarousel();
-                });
-                
-                //ui.connectBtn.on("click", ui.clickConnect);
+                });                
 	};
         
-        //// connect //////////
-        /*
-        
-        ui.clickConnect = function() {
-            var monitorId = ui.monitorIdInput.val();
-            $("#connectForm").collapsible("collapse");
-            control.connectTo(monitorId);
-        };
-        
-        ui.onConnect = function(value) {
-            if (value) {
-                control.connect = true;
-
-                ui.connectBtn.off("click", ui.clickConnect);
-                ui.connectBtn.button("option", "icon", "delete");
-                ui.connectBtn.on("click", ui.clickDisconnect);
-            }
-        };
-        
-        ui.clickDisconnect = function() {
-            $("#connectForm").collapsible("collapse");
-            ui.connectBtn.off("click", ui.clickDisconnect);
-            ui.connectBtn.button("option", "icon", "check");
-            ui.connectBtn.on("click", ui.clickConnect);
-            control.disconnect();
-        };
-        */
         /////////// ui methods //////////////
         
         ui.initPlayPauseBtn = function() {
@@ -251,9 +234,6 @@ define(["modules/control", "jquery"], function(control, $) {
             var videoId = listItem.attr("data-videoId");
             control.clickItem(videoId);
             
-            //var index = control.playList.indexOf(videoId);
-            //ui.updateByUiCallback("index", index);
-
             ui.updateByUiCallback("videoId", videoId);
         };
         
