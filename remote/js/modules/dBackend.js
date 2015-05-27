@@ -6,6 +6,16 @@ define(["firebase"], function() {
             var temp = dBackend.url + (dBackend.appName + '/' + dBackend.sessionId  + '/');
             
             dBackend.ref = new Firebase(temp);
+            dBackend.ref.once('value', function(snapshot) {
+                if (snapshot.exists()) {
+                    console.log("data exists");
+                }
+                else {
+                    dBackend.newDeviceCallback();
+                }
+                
+            });
+            
             dBackend.dataRef = dBackend.ref.child("data");
             dBackend.listRef = dBackend.ref.child("playList");
             
@@ -21,6 +31,11 @@ define(["firebase"], function() {
             });
         };
         
+        dBackend.setNewDeviceCallback = function(callback) {
+            dBackend.newDeviceCallback = callback;
+        };
+
+        
         //// connect //////////
         dBackend.clickConnect = function() {
             var monitorId = dBackend.monitorIdInput.val();
@@ -31,7 +46,7 @@ define(["firebase"], function() {
             $.mobile.loading('show');
             dBackend.monitorRef.once('value', function(snapshot) {
                 
-                if (snapshot.hasChild('connectTo')) {
+                if (snapshot.exists()/*hasChild('connectTo')*/) {
                     if (snapshot.child('status').val() === 0) {
                         dBackend.monitorRef.update({"connectTo": dBackend.sessionId});
                         dBackend.monitorRef.update({"status": 1});

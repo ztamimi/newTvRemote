@@ -11,22 +11,7 @@ define(["modules/dBackend"], function(dBackend) {
 	};
         
         /// connect ///////////////
-        /*
-        control.connectTo = function (monitorId) {
-            if (control.connect)
-                return;
-            dBackend.connectTo(monitorId);
-        };
         
-        control.disconnect = function () {
-            if (!control.connect)
-                return;
-            
-            control.connect = false;
-            dBackend.disconnect();
-        };
-        
-        */
         control.set = function () {
             control.updateByUi('volume', 50);
             control.updateByUi('play', false);

@@ -42,7 +42,7 @@ define(["modules/control", "jquery"], function(control, $) {
                 ui.volInput.on('change', ui.changeVolumeSlider);
                 ui.speakerBtn.on('click', ui.clickSpeakerBtn);
                 
-                //// carousel events ///////
+                //// carousel events /////// 
                 ui.carousel.on("swiperight", ui.clickBack);
                 ui.carousel.on("swipeleft", ui.clickNext);
                 ui.list.on('click', 'li a', ui.clickItem);
@@ -59,11 +59,15 @@ define(["modules/control", "jquery"], function(control, $) {
                 
 	};
         /////////// transitions /////////////
-        ui.goSearch = function() {
+        ui.goSearch = function(event) {
+            if (event.target.className === "slideImg")
+                return;
             $.mobile.changePage("#searchPage", {transition: "slide", changeHash: false, reverse: "true"});
         };
         
-        ui.goPlayList = function() {
+        ui.goPlayList = function(event) {
+            if (event.target.className === "slideImg")
+                return;
             $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false});
         };
         
@@ -215,7 +219,7 @@ define(["modules/control", "jquery"], function(control, $) {
         };
 
         ui.removeCarouselItem = function(videoId) {
-            var item = $("li[data-videoId*=" + videoId + "]")[0];
+            var item = $("li[data-videoId=" + videoId + "]");
             item.remove();
         };
         
