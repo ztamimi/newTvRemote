@@ -28,27 +28,36 @@ define(["modules/control", "jquery"], function(control, $) {
                 ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
                 ui.speakerBtn.on('click', ui.clickSpeakerBtn);
                 ui.list.on('click', 'li a', ui.clickItem);
+                if (ui.playPauseBtn.attr('data-play') === 'pause')
+                    ui.playPauseImg.attr('src', 'css/play.png');
+                else
+                    ui.playPauseImg.attr('src', 'css/pause.png');
+
             }
             else {
                 ui.volInput.slider("disable");
                 ui.playPauseBtn.off('click', ui.clickPlayPauseBtn);                
                 ui.speakerBtn.off('click', ui.clickSpeakerBtn);
                 ui.list.off('click', 'li a', ui.clickItem);
+                if (ui.playPauseBtn.attr('data-play') === 'pause')
+                    ui.playPauseImg.attr('src', 'css/gray_play.png');
+                else
+                    ui.playPauseImg.attr('src', 'css/gray_pause.png');
             }
         };
         
 	ui.registerEvents = function() {
-                ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
-                ui.volInput.on('change', ui.changeVolumeSlider);
-                ui.speakerBtn.on('click', ui.clickSpeakerBtn);
+                //ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
+                //ui.volInput.on('change', ui.changeVolumeSlider);
+                //ui.speakerBtn.on('click', ui.clickSpeakerBtn);
                 
                 //// carousel events /////// 
                 ui.carousel.on("swiperight", ui.clickBack);
                 ui.carousel.on("swipeleft", ui.clickNext);
-                ui.list.on('click', 'li a', ui.clickItem);
+                //ui.list.on('click', 'li a', ui.clickItem);
                 
                 // device orientation 
-                $( window ).on( "orientationchange resize", function( event ) {
+                $( window ).on( "orientationchange resize", function(event) {
                     console.log("orientation change");
                     ui.initCarousel();
                 });

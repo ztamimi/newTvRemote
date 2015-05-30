@@ -46,7 +46,7 @@ define(["firebase"], function() {
             $.mobile.loading('show');
             dBackend.monitorRef.once('value', function(snapshot) {
                 
-                if (snapshot.exists()/*hasChild('connectTo')*/) {
+                if (snapshot.exists()) {
                     if (snapshot.child('status').val() === 0) {
                         dBackend.monitorRef.update({"connectTo": dBackend.sessionId});
                         dBackend.monitorRef.update({"status": 1});
@@ -66,7 +66,7 @@ define(["firebase"], function() {
             if (key === 'status' && value === 2) {
                 dBackend.flip(2);
                 dBackend.connectCallback();
-                dBackend.monitorRef.onDisconnect().update({"status": 3});
+                //dBackend.monitorRef.onDisconnect().update({"status": 3});
                 dBackend.connectError(0);
                 return;
             }
@@ -103,9 +103,10 @@ define(["firebase"], function() {
         dBackend.clickDisconnect = function() {
             dBackend.connectError(3);
             dBackend.flip(1);
-            dBackend.disconnectCallback();
+            //dBackend.updateValue({"play": false});
             dBackend.monitorRef.update({"status": 3});
             dBackend.monitorRef = null;
+            dBackend.disconnectCallback();
         };
         
         dBackend.flip = function(status) {
