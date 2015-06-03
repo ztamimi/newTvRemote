@@ -2,7 +2,38 @@
 define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, ui) {
     var search = {};
     
+    search.render = function() {
+        var pageItem = $("<div>", {'data-role': "page", id: "searchPage", 'data-theme': 'b'});
+            var headerItem = $("<div>", {'data-role': "header", 'data-position': "fixed", 'data-theme': "b"});
+            var formItem = $("<form>");
+            var tableItem = $("<table>");
+            
+            var tdItem1 = $("<td>", {width: "90%"});
+            var inputItem1 = $("<input>", {id: "searchKeyword", placeholder: 'search...', type: "text"});
+            tdItem1.append(inputItem1);
+            tableItem.append(tdItem1);
+            
+            var tdItem2 = $("<td>");
+            var inputItem2 = $("<input>", {type: "button", id: "searchBtn", value: "search"});
+            tdItem2.append(inputItem2);
+            tableItem.append(tdItem2);
+            
+            formItem.append(tableItem);
+            headerItem.append(formItem);
+            pageItem.append(headerItem);
+            
+            var contentItem = $("<div>", {'data-role': "content", 'data-theme': 'b'});
+            contentItem.append($("<ul>", {id: "searchResult", 'data-role': "listview", class: "ui-overlay-shadow", 'data-split-icon': "plus"}));
+            pageItem.append(contentItem);
+            
+            var footerItem = ui.renderFooter();
+            pageItem.append(footerItem);
+            
+            $("body").append(pageItem);
+    };
+    
     search.init = function() {
+        search.render();
         search.list = $("#searchResult");
         search.keyword = $("#searchKeyword");
     

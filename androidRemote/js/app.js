@@ -1,22 +1,22 @@
-require.config({
+requirejs.config({
     baseUrl: 'js',
     
     paths: {
         "firebase": "lib/firebase",
-        "jquery": "lib/jquery", 
+        "jquery": "lib/jquery",
         "jqueryMobile": "lib/jquerymobile"
     }
 });
 
 require(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui', 'modules/list', 'modules/search'], function(utilities, dBackend, control, ui, list, search) {
-    
+    /*
     $.mobile.changePage("#splashPage", {transition: "fade", changeHash: false});
     
     setTimeout(function(){
         $.mobile.changePage("#remotePage", {transition: "fade", changeHash: false});
         console.log("slide");
     }, 2000);
-    
+    */
     var id = utilities.getCookie("deviceId");
     if (!id) {
         id = utilities.generateRandomStr(6);
@@ -56,5 +56,5 @@ require(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui
     dBackend.setNewDeviceCallback(onNewDevice);
     dBackend.init(); 
     dBackend.setUpdateValueCallback(control.updateValueByBackEnd);
-    dBackend.setUpdateListCallback(control.updateListByBackEnd);
+    dBackend.setUpdateListCallback(control.updateListByBackEnd);   
 });
