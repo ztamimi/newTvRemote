@@ -2,7 +2,38 @@
 define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(control, ui) {
 	var list = {};
 
+        list.render = function() {
+            var pageItem = $("<div>", {'data-role': 'page', id: 'playListPage', 'data-theme': 'b'});
+            var header = ui.renderHeader();
+            pageItem.append(header);
+            var headerItem = $("<div>");
+            var formItem = $("<form>");
+            var tableItem = $("<table>");
+            var tdItem = $("<td>", {width: '90%'});
+            var inputItem1 = $("<input>", {type: 'url', id: 'url', placeholder: 'copy the url of a youtube video here...', 'data-mini': 'true', 'data-inline': 'true'});
+            tdItem.append(inputItem1);
+            tableItem.append(tdItem);
+            
+            var tdItem2 = $("<td>");
+            var inputItem2 = $("<input>", {'type':'button', id:'addUrl', value:'Add Video', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'plus', 'data-iconpos': 'notext'});
+            tdItem2.append(inputItem2);
+            tableItem.append(inputItem2);
+            formItem.append(tableItem);
+            headerItem.append(formItem);
+            pageItem.append(headerItem);
+            
+            var contentItem = $("<div>", {'data-role': 'content'/*, 'data-theme': 'b'*/});
+            var ulItem = $("<ul>", {id: 'videoList', 'data-role': 'listview', class: 'ui-overlay-shadow', 'data-split-icon': 'delete'});
+            contentItem.append(ulItem);
+            pageItem.append(contentItem);
+            var footerItem = ui.renderFooter();
+            pageItem.append(footerItem);
+            
+            $('body').append(pageItem);
+        };
+        
 	list.init = function() {
+            list.render();
             list.addUrlBtn = $("#addUrl");
             list.urlInput = $("#url");
             list.videoList = $("#videoList");
@@ -87,6 +118,8 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
                 return;
             
             var videoId = list.getVideoId();
+            if (!videoId)
+                return;
             list.urlInput.value = "";
 
             if (control.playList.indexOf(videoId) >= 0)  // video already exists
@@ -118,7 +151,7 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             var temp = url.toLowerCase();
             
             if (!url)
-                return;
+                return null;
             
             if (temp.indexOf("youtube.com") >= 0) {
                 var param = url.split("?")[1].split("v=")[1].split("&")[0];
@@ -129,17 +162,8 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
                 var param = url.split(".")[1].split("/")[1];
                 return param;
             }
-
             console.log("invalid youtube url");
-            return;
-            //var temp = url.split("://")[1];
-            //if (!temp)
-            //    return;
-            //var site = temp.split("?")[0];
-            //var site = url.split(".")[1];
-            //if (site.toLowerCase() !== "youtube") 
-            
-            
+            return null;
         };
         
         list.addSearchResult = function(videoId, titleText, imgUrl) {

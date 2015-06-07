@@ -37,12 +37,8 @@
   margin: 0 auto;
 }
 
-/* Hide the delete button on touch devices */
-ul.touch li.ui-li-has-alt a.delete {
-    display: none;
-}
-ul.touch li.ui-li-has-alt a.ui-btn {
-    margin-right:0;
+.ui-listview>li p {
+    white-space : normal;
 }
 
             .slideImg {
@@ -76,4 +72,52 @@ ul.touch li.ui-li-has-alt a.ui-btn {
                 //margin: 0;
                 padding: 0;
             }
-            
+
+@font-face {
+    font-family: "madeInMalaysia";
+    src: url("fonts/made in Indonesia.ttf");
+}
+
+@font-face {
+    font-family: "squadaOneRegular";
+    src: url("fonts/SquadaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "generica";
+    src: url("fonts/Generica.otf");
+}
+
+@font-face {
+    font-family: "Generica Bold";
+    src: url("fonts/Generica Bold.otf");
+}
+
+@font-face {
+    font-family: "pWKool";
+    src: url("fonts/PWKool.ttf");
+}
+
+@font-face {
+    font-family: "aero";
+    src: url("fonts/Aero.ttf");
+}
+
+@font-face {
+    font-family: "morningSunshine";
+    src: url("fonts/morning sunshine.ttf");
+}
+
+@font-face {
+    font-family: "scriptThing";
+    src: url("fonts/Script Thing.ttf");
+}
+
+@font-face {
+    font-family: "takeMeHome";
+    src: url("fonts/TAKE ME HOME.ttf");
+}
+
+body {
+    font-family: 'scriptThing';
+}
