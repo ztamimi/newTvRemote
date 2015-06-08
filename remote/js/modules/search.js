@@ -3,21 +3,27 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
     var search = {};
     
     search.render = function() {
-        var pageItem = $("<div>", {'data-role': "page", id: "searchPage", 'data-theme': 'b'});
-        var header = ui.renderHeader();
-        pageItem.append(header);
+        var pageItem = $("<div>", {'data-role': "panel", id: "searchPage", 'data-position': "right", 'data-display':"push", 'data-theme': 'b'});
+        //var header = ui.renderHeader();
+        //pageItem.append(header);
         
         var headerItem = $("<div>");
         var formItem = $("<form>");
-        var tableItem = $("<table>");
+        var tableItem = $("<table>", {width: "100%"});
             
-        var tdItem1 = $("<td>", {width: "90%"});
+        //<a href="#my-header" data-rel="close">Close panel</a>
+        var tdItem0 = $("<td>", {width: "10%"});
+        var inputItem0 = $("<input>", {type: "button", id: "backBtn", value: "back", 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'back', 'data-iconpos': 'notext'});
+        tdItem0.append(inputItem0);
+        tableItem.append(tdItem0);
+        
+        var tdItem1 = $("<td>", {width: "80%"});
         var inputItem1 = $("<input>", {id: "searchKeyword", placeholder: 'search...', type: "text"});
         tdItem1.append(inputItem1);
         tableItem.append(tdItem1);
             
-        var tdItem2 = $("<td>");
-        var inputItem2 = $("<input>", {type: "button", id: "searchBtn", value: "search"});
+        var tdItem2 = $("<td>", {width: "10%"});
+        var inputItem2 = $("<input>", {type: "button", id: "searchBtn", value: "search", 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'search', 'data-iconpos': 'notext'});
         tdItem2.append(inputItem2);
         tableItem.append(tdItem2);
             
@@ -29,22 +35,24 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         contentItem.append($("<ul>", {id: "searchResult", 'data-role': "listview", class: "ui-overlay-shadow", 'data-split-icon': "plus"}));
         pageItem.append(contentItem);
             
-        var footerItem = ui.renderFooter();
-        pageItem.append(footerItem);
+        //var footerItem = ui.renderFooter();
+        //pageItem.append(footerItem);
             
         var divItem = $("<div>", {id: "searchItemAdded", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content"});
         divItem.text("item added");
         pageItem.append(divItem);
-            
-        $("body").append(pageItem);
+        
+        $("#playListPage").append(pageItem);
     };
     
     search.init = function() {
         search.render();
         search.list = $("#searchResult");
         search.keyword = $("#searchKeyword");
+        //$("#searchPage").panel();
     
         $("#searchBtn").on('click', search.clickSearch);
+        $("#backBtn").on('click', search.clickBack);
         search.keyword.keypress(function( event ) {
             if (event.which == 13) {
                 event.preventDefault();
@@ -67,6 +75,10 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
             $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false, reverse: true});
         };
     
+    search.clickBack = function() {
+        $("#searchPage").panel("close");
+    };
+    
     search.clickSearch = function() {
         var keyword = search.keyword.val();
         if (!keyword)
@@ -74,6 +86,10 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         console.log(keyword);
         search.list.empty();
         search.search(keyword);
+    };
+    
+    search.setSearchKeyword = function(keyword) {
+        search.keyword.val(keyword);
     };
     
     search.clickAddVideo = function() {

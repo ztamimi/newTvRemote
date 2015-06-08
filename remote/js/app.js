@@ -43,6 +43,7 @@ require(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui
     ui.setUpdateByUiCallback(list.updateByUi);
     
     search.init();
+    list.setSearchPtr(search);
     
     control.init();
     control.setUiValueCallback(ui.updateValueByControl);

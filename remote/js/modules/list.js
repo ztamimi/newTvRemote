@@ -8,21 +8,29 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             pageItem.append(header);
             var headerItem = $("<div>");
             var formItem = $("<form>");
-            var tableItem = $("<table>");
-            var tdItem = $("<td>", {width: '90%'});
+            var tableItem = $("<table>", {width: '100%'});
+            var tdItem1 = $("<td>", {width: '80%'});
             var inputItem1 = $("<input>", {type: 'url', id: 'url', placeholder: 'copy the url of a youtube video here...', 'data-mini': 'true', 'data-inline': 'true'});
-            tdItem.append(inputItem1);
-            tableItem.append(tdItem);
+            tdItem1.append(inputItem1);
+            tableItem.append(tdItem1);
             
-            var tdItem2 = $("<td>");
+            var tdItem2 = $("<td>", {width: '10%'});
             var inputItem2 = $("<input>", {'type':'button', id:'addUrl', value:'Add Video', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'plus', 'data-iconpos': 'notext'});
             tdItem2.append(inputItem2);
-            tableItem.append(inputItem2);
+            tableItem.append(tdItem2);
+            //formItem.append(tableItem);
+            //headerItem.append(formItem);
+            
+            var tdItem3 = $("<td>", {width: '10%'});
+            var inputItem3 = $("<input>", {'type':'button', id:'searchVideo', value:'Search Video', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'search', 'data-iconpos': 'notext'});
+            tdItem3.append(inputItem3);
+            tableItem.append(tdItem3);
             formItem.append(tableItem);
             headerItem.append(formItem);
+            
             pageItem.append(headerItem);
             
-            var contentItem = $("<div>", {'data-role': 'content'/*, 'data-theme': 'b'*/});
+            var contentItem = $("<div>", {'data-role': 'content'});
             var ulItem = $("<ul>", {id: 'videoList', 'data-role': 'listview', class: 'ui-overlay-shadow', 'data-split-icon': 'delete'});
             contentItem.append(ulItem);
             pageItem.append(contentItem);
@@ -35,19 +43,18 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
 	list.init = function() {
             list.render();
             list.addUrlBtn = $("#addUrl");
+            list.searchVideoBtn = $("#searchVideo");
             list.urlInput = $("#url");
             list.videoList = $("#videoList");
             list.videoList.listview();
             
-            list.registerEvents();
-            
-            //list.initVideoList();
-            
+            list.registerEvents();            
             list.enable(false);
 	};
 
 	list.registerEvents = function() {
             list.addUrlBtn.on("click", list.clickAddVideo);
+            list.searchVideoBtn.on("click", list.clickSearchVideo);
             list.urlInput.keypress(function( event ) {
                 if (event.which == 13) {
                     event.preventDefault();
@@ -113,21 +120,31 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             ui.highLightItem(index);
         };
         
+        list.clickSearchVideo = function() {
+            var keyword = list.urlInput.val();
+            if (keyword) {
+                list.search.setSearchKeyword(keyword);
+                list.search.clickSearch();
+                list.urlInput.val("");
+            }
+            $("#searchPage").panel("open");
+        };
+        
         list.clickAddVideo = function() {
             if (!list.videoList)
                 return;
             
             var videoId = list.getVideoId();
-            if (!videoId)
-                return;
-            list.urlInput.value = "";
-
-            if (control.playList.indexOf(videoId) >= 0)  // video already exists
-                return;
-            else {
+            if (videoId) {
+                list.urlInput.val("");
+                if (control.playList.indexOf(videoId) >= 0)  // video already exists
+                    return;
+                
                 list.addVideo(videoId);
                 control.addVideo(videoId);
             }
+            else
+                list.clickSearchVideo();
         };
         
         list.clickDeleteVideo = function() {
@@ -251,6 +268,10 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
                     list.highLightItem(index);
                     break;
             };
+        };
+        
+        list.setSearchPtr = function(searchPtr) {
+            list.search = searchPtr;
         };
         
         return list;

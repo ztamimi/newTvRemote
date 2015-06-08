@@ -79,10 +79,11 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             var divItem = $("<div>", {'data-role': 'footer', 'data-position': 'fixed'});
             var navItem = $("<nav>", {'data-role': 'navbar'});
             var ulItem = $("<ul>");
+            /*
             var liItem1 = $("<li>");
             var aItem1 = $("<a>", {'data-icon': 'search', href: '#searchPage'});
             liItem1.append(aItem1);
-                
+            */    
             var liItem2 = $("<li>");
             var aItem2 = $("<a>", {'data-icon': 'grid', href: '#remotePage'});
             liItem2.append(aItem2);
@@ -91,7 +92,7 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             var aItem3 = $("<a>", {'data-icon': 'plus', href: '#playListPage'});
             liItem3.append(aItem3);
                 
-            ulItem.append(liItem1);
+            //ulItem.append(liItem1);
             ulItem.append(liItem2);
             ulItem.append(liItem3);
                 
@@ -104,13 +105,13 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             var divItem = $("<div>", {'data-role': 'header', 'data-position': 'fixed'});
             var tableItem = $("<table>", {style: "width: 100%"});
             
-            var td1 = $("<td>", {style: "width: 75%"});
+            var td1 = $("<td>", {style: "width: 75%; padding: 0px; margin: 0px"});
             var heading = $("<h1>", {style: 'margin: 0 auto; font-family: "madeInMalaysia"'}).text("MoboRemote");
             td1.append(heading);
             tableItem.append(td1);
             
-            var td2 = $("<td>");
-            var logo = $("<img>", {src: "css/logo/logo1.png", style: "margin: 0 auto; height: 40px; float: right"});
+            var td2 = $("<td>", {style: "padding: 0px; margin: 0px"});
+            var logo = $("<img>", {src: "css/logo/logo2.png", style: "margin: 0 auto; height: 35px; float: right"});
             td2.append(logo);
             tableItem.append(td2);
             
