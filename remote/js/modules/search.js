@@ -111,7 +111,7 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         $('#itemDesc').popup('open');
     };
     
-    search.clickAddVideo = function() {
+    search.clickAddVideo = function() { 
         var searchItem = $(this).parent('li');
         var videoId = searchItem.attr("data-videoId");
         var title = searchItem.find("p[class='title']").text();

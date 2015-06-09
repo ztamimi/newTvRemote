@@ -114,27 +114,41 @@
     src: url("fonts/TAKE ME HOME.ttf");
 }
 
+@font-face {
+    font-family: "Derivia";
+    src: url("fonts/Derivia.TTF");
+}
+
 .ui-listview>li .title {
     white-space : normal;
-    font-family: 'madeInMalaysia';
-    font-size: 20px;
+    //font-family: 'madeInMalaysia';
+    font-family: 'squadaOneRegular';    
+    font-size: 15px;
+    //color: #3388cc;
+    margin: 0px;
+
 }
 
 .ui-listview>li .desc {
     white-space : nowrap;
+    //font-family: 'squadaOneRegular';
     font-family: 'squadaOneRegular';
     font-size: 14px;
+    color: #649dc9;
 }
 
-.title {
-    white-space : normal;
+#itemDesc > p.title {
+    white-space: normal;
+    //font-family: 'squadaOneRegular';
     font-family: 'squadaOneRegular';
-    font-size: 24px;
-    font-color: #3388cc;
+    font-size: 20px;
+    color: #3388cc;
+    margin: 0px
 }
 
-.desc {
-    white-space : normal;
-    font-family: 'pWKool';
-    font-size: 17px;
+#itemDesc > p.desc {
+    white-space: normal;
+    //font-family: 'madeInMalaysia';
+    font-family: 'squadaOneRegular';
+    font-size: 18px;
 }

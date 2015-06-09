@@ -106,7 +106,7 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             var tableItem = $("<table>", {style: "width: 100%"});
             
             var td1 = $("<td>", {style: "width: 75%; padding: 0px; margin: 0px"});
-            var heading = $("<h1>", {style: 'margin: 0 auto; font-family: "madeInMalaysia"'}).text("MoboRemote");
+            var heading = $("<h1>", {style: 'margin: 0 auto; font-family: "Generica Bold"'}).text("MoboRemote");
             td1.append(heading);
             tableItem.append(td1);
             

@@ -66,7 +66,7 @@ define(["firebase", "jquery", "jqueryMobile"], function() {
             if (key === 'status' && value === 2) {
                 dBackend.flip(2);
                 dBackend.connectCallback();
-                //dBackend.monitorRef.onDisconnect().update({"status": 3});
+                dBackend.monitorRef.onDisconnect().update({"status": 3});
                 dBackend.connectError(0);
                 return;
             }
