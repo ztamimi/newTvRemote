@@ -30,7 +30,7 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             divItem.text("connecting...");
             pageItem.append(divItem);
             
-            var contentItem = $("<div>", {'data-role': "content", class: "noMargins"});
+            var contentItem = $("<div>", {id: "remoteDiv", 'data-role': "content", class: "noMargins"});
             var formItem = $("<form>");
             var formItem1 = $("<div>", {class: "align-right", style: "padding-right: 5px"});
             var aItem1 = $("<a>", {href: '', id: 'speaker', 'data-func': 'speaker'});
@@ -144,7 +144,10 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
 	};
         
         ui.enable = function(value) {
+            var contentDiv = $("#remoteDiv"); //$("#remotePage['data-role'='content']");
             if (value) {
+                contentDiv.show();
+                /*
                 ui.volInput.slider("enable");
                 ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
                 ui.speakerBtn.on('click', ui.clickSpeakerBtn);
@@ -153,9 +156,11 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
                     ui.playPauseImg.attr('src', 'css/buttons/play_active.png');
                 else
                     ui.playPauseImg.attr('src', 'css/buttons/pause_active.png');
-
+                */
             }
             else {
+                contentDiv.hide();
+                /*
                 ui.volInput.slider("disable");
                 ui.playPauseBtn.off('click', ui.clickPlayPauseBtn);                
                 ui.speakerBtn.off('click', ui.clickSpeakerBtn);
@@ -164,18 +169,19 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
                     ui.playPauseImg.attr('src', 'css/buttons/play_gray.png');
                 else
                     ui.playPauseImg.attr('src', 'css/buttons/pause_gray.png');
+                */
             }
         };
         
 	ui.registerEvents = function() {
-                //ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
+                ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
                 ui.volInput.on('change', ui.changeVolumeSlider);
-                //ui.speakerBtn.on('click', ui.clickSpeakerBtn);
+                ui.speakerBtn.on('click', ui.clickSpeakerBtn);
                 
                 //// carousel events /////// 
                 ui.carousel.on("swiperight", ui.clickBack);
                 ui.carousel.on("swipeleft", ui.clickNext);
-                //ui.list.on('click', 'li a', ui.clickItem);
+                ui.list.on('click', 'li a', ui.clickItem);
                 
                 // device orientation 
                 $( window ).on( "orientationchange resize", function(event) {

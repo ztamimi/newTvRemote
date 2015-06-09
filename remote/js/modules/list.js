@@ -187,7 +187,7 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             var item = $("<li>", {'data-videoId': videoId});
             var link = $("<a>", {href: '#', class: 'data'});
             var thumb = $("<img>", {src: imgUrl});
-            var title = $("<p></p>").text(titleText);
+            var title = $("<p>", {class: 'title'}).text(titleText);
             var icon = $("<a>", {href:'', class:'delete ui-btn ui-btn-icon-notext ui-icon-delete', title:'Delete'});
             link.append(thumb);
             link.append(title);
@@ -204,12 +204,14 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
                 return;
             
             var item = $("<li>", {'data-videoId': videoId});
-            var link = $("<a>", {href: '#', class: 'data'});
+            var link = $("<a>", {class: 'data'});
             var thumb = $("<img>", {src: list.imgUrl});
-            var title = $("<p></p>").text(list.videoTitle);
+            var title = $("<p>", {class: 'title'}).text(list.videoTitle);
             var icon = $("<a>", {href:'', class:'delete ui-btn ui-btn-icon-notext ui-icon-delete', title:'Delete'});
+            //var desc = $("<p>");
             link.append(thumb);
             link.append(title);
+            //link.append(desc);
             item.append(link);
             item.append(icon);
             item.appendTo("#videoList");
@@ -217,13 +219,15 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             var slideImg = ui.addToCarousel(videoId);
             
             list.getVideoInfo(videoId, title, thumb, slideImg);
+
             $("#videoList").listview( "refresh");
+
         };
         
         list.getVideoInfo = function (videoId, title, thumb, slideImg) {
             $.getJSON("https://www.googleapis.com/youtube/v3/videos", {
 					key: "AIzaSyBceX56re-t1h1JlKgOoAVa3w8S3pxmAX0",
-					part: "snippet,statistics",
+					part: "snippet",
 					id: videoId
 				}, function(data) {  
                                     if (data.items.length === 0) {

@@ -3,7 +3,7 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
     var search = {};
     
     search.render = function() {
-        var pageItem = $("<div>", {'data-role': "panel", id: "searchPage", 'data-position': "right", 'data-display':"push", 'data-theme': 'b'});
+        var pageItem = $("<div>", {'data-role': "panel", id: "searchPage", 'data-position': "right", 'data-display':"overlay", 'data-theme': 'b'});
         //var header = ui.renderHeader();
         //pageItem.append(header);
         
@@ -42,6 +42,14 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         divItem.text("item added");
         pageItem.append(divItem);
         
+        var itemDesc = $("<div>", {id: "itemDesc", 'data-role': "popup", 'data-theme': "a", 'data-overlay-theme': "b", 'data-transition': "slide", class: "ui-content"});
+        var closeBtn = $("<a>", {href: "#", 'data-rel': "back", 'data-role': "button", 'data-theme': "a", 'data-icon': "delete", 'data-iconpos': "notext", 'class': "ui-btn-left"});
+        itemDesc.append(closeBtn);
+        itemDesc.append($("<p>", {class: 'title'}));
+        itemDesc.append($("<br>"));
+        itemDesc.append($("<p>", {class: 'desc'}));
+        pageItem.append(itemDesc);
+        
         $("#playListPage").append(pageItem);
     };
     
@@ -60,6 +68,7 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
             }
         });
         search.list.on('click', 'li a.add', search.clickAddVideo);
+        search.list.on('click', 'li a.data', search.clickItem);
         $('#searchItemAdded').on("popupafteropen", function(event, ui) {$('#searchItemAdded').popup("close")});
 
         
@@ -92,10 +101,20 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         search.keyword.val(keyword);
     };
     
+    search.clickItem = function() {
+        var item = $(this).parent('li');
+        var title = item.find($("p[class='title']"));
+        var desc = item.find($("p[class='desc']"));
+        
+        $("#itemDesc").find("p[class='title']").text(title.text());
+        $("#itemDesc").find("p[class='desc']").text(desc.text());
+        $('#itemDesc').popup('open');
+    };
+    
     search.clickAddVideo = function() {
         var searchItem = $(this).parent('li');
         var videoId = searchItem.attr("data-videoId");
-        var title = searchItem.find("p").text();
+        var title = searchItem.find("p[class='title']").text();
         var imgUrl = searchItem.find("img").attr("src");
         list.addSearchResult(videoId, title, imgUrl);
         ui.addSearchResult(videoId, title, imgUrl);
@@ -127,10 +146,12 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
                                         var item = $("<li>", {'data-videoId': videoId});
                                         var link = $("<a>", {href: '#', class: 'data'});
                                         var thumb = $("<img>", {src: searchList[i].snippet.thumbnails.default.url});
-                                        var title = $("<p></p>").text(searchList[i].snippet.title);
+                                        var title = $("<p>", {class: 'title'}).text(searchList[i].snippet.title);
+                                        var desc = $("<p>", {class: 'desc'}).text(searchList[i].snippet.description);
                                         var icon = $("<a>", {href:'#searchItemAdded', 'data-transition':'slideup', 'data-rel':'popup', class:'add ui-btn ui-btn-icon-notext ui-icon-plus', title:'Add'});
                                         link.append(thumb);
                                         link.append(title);
+                                        link.append(desc);
                                         item.append(link);
                                         item.append(icon);
                                         

@@ -37,10 +37,6 @@
   margin: 0 auto;
 }
 
-.ui-listview>li p {
-    white-space : normal;
-}
-
             .slideImg {
                 width: 100px;
                 padding: 5px 5px;
@@ -118,6 +114,27 @@
     src: url("fonts/TAKE ME HOME.ttf");
 }
 
-body {
-    font-family: 'scriptThing';
+.ui-listview>li .title {
+    white-space : normal;
+    font-family: 'madeInMalaysia';
+    font-size: 20px;
+}
+
+.ui-listview>li .desc {
+    white-space : nowrap;
+    font-family: 'squadaOneRegular';
+    font-size: 14px;
+}
+
+.title {
+    white-space : normal;
+    font-family: 'squadaOneRegular';
+    font-size: 24px;
+    font-color: #3388cc;
+}
+
+.desc {
+    white-space : normal;
+    font-family: 'pWKool';
+    font-size: 17px;
 }
