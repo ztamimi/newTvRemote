@@ -1,12 +1,13 @@
 .imgbtnL1 {
-    width: 70px; 
-    height: 70px;
+    width: 80x; 
+    height: 80px;
     text-align: center;
 }
 
 .imgbtnL2 {
-    width: 60px; 
-    height: 60px;
+    width: 50px; 
+    height: 50px;
+    padding-top: 20px;
     text-align: center;
 }
 
@@ -49,7 +50,7 @@
             #carousel {
                 width: 300px;
                 overflow: hidden;
-                border: black solid 1px;
+                //border: black solid 1px;
                 margin: 0 auto;
             }
             
@@ -147,6 +148,22 @@
 }
 
 #itemDesc > p.desc {
+    white-space: normal;
+    //font-family: 'madeInMalaysia';
+    font-family: 'squadaOneRegular';
+    font-size: 18px;
+}
+
+.info_title {
+    white-space: normal;
+    //font-family: 'squadaOneRegular';
+    font-family: 'squadaOneRegular';
+    font-size: 20px;
+    color: #3388cc;
+    margin: 0px
+}
+
+.info_desc {
     white-space: normal;
     //font-family: 'madeInMalaysia';
     font-family: 'squadaOneRegular';

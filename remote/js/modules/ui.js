@@ -4,31 +4,36 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
         
         ui.render = function() {
             var pageItem = $("<div>", {'data-role': "page", id: "remotePage", 'data-theme': 'b'});
+            
             var header = ui.renderHeader();
             pageItem.append(header);
-            var headerItem = $("<div>");
-            var setItem = $("<fieldset>", {id: "connectForm", 'data-role': "collapsible", 'data-mini': "true", 'data-iconpos': "right", 'data-collapsed-icon': "carat-d", 'data-expanded-icon': "carat-u"});
-            setItem.append($("<legend>").text("Connect to monitor"));
-            var tableItem = $("<table>");
             
-            var tdItem1 = $("<td>");
-            var inputItem1 = $("<input>", {type: "text", id: "monitorId", value: "", placeholder: "Monitor ID...", 'data-mini': "true", 'data-inline': "true"});
-            tdItem1.append(inputItem1);
+            var connectDiv = $("<div>");
+            var connectForm = $("<fieldset>", {id: "connectForm", 'data-role': "collapsible", 'data-mini': "true", 'data-iconpos': "right", 'data-collapsed-icon': "carat-d", 'data-expanded-icon': "carat-u"});
+            connectForm.append($("<legend>").text("Connect to monitor"));
             
-            var tdItem2 = $("<td>");
-            var inputItem2 = $("<input>", {type: "button", id: "connect", 'data-icon': "check", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"});
-            tdItem2.append(inputItem2);
+            var table = $("<table>");
+            var monitorInput = $("<td>").append($("<input>", {type: "text", id: "monitorId", value: "", placeholder: "Monitor ID...", 'data-mini': "true", 'data-inline': "true"}));
+            var connectBtn = $("<td>").append($("<input>", {type: "button", id: "connect", 'data-icon': "check", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"}));
+            table.append(monitorInput);            
+            table.append(connectBtn);
             
-            tableItem.append(tdItem1);
-            tableItem.append(tdItem2);
+            var title = $("<p>", {class: 'info_title'}).text("How to connect to monitor");
+            var connectInfo = $("<p>", {class: 'info_desc'}).text("On the desired machine (laptop, smart tv, playstation, etc). Launch the web browser and go to http://moboremote.com. Type the monitor ID in the field below and hit the button.");
+            connectForm.append(title);
+            connectForm.append(connectInfo);
             
-            setItem.append(tableItem);
-            headerItem.append(setItem);
-            pageItem.append(headerItem);
+            connectForm.append(table);
+
+            var disconnectInfo  = $("<p>", {class: 'info_desc'}).text('To disconnect, return to this dialog (click on "connect to monitor") and click on the button next to the monitor ID.');
+            connectForm.append(disconnectInfo);
             
-            var divItem = $("<div>", {id: "connectStatus", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content"});
-            divItem.text("connecting...");
-            pageItem.append(divItem);
+            connectDiv.append(connectForm);
+            pageItem.append(connectDiv);
+            
+            var connectStatusDiv = $("<div>", {id: "connectStatus", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content"});
+            connectStatusDiv.text("connecting...");
+            pageItem.append(connectStatusDiv);
             
             var contentItem = $("<div>", {id: "remoteDiv", 'data-role': "content", class: "noMargins"});
             var formItem = $("<form>");
@@ -37,33 +42,65 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             var imgItem1 = $("<img>", {id: 'speakerImg', src: 'css/speaker.png', class: 'imgIcon'});
             aItem1.append(imgItem1);
             formItem1.append(aItem1);
-            //<div class="align-right" style="padding-right: 5px"><a href="" id="speaker" data-func="speaker"><img id="speakerImg" src="css/speaker.png" class="imgIcon"></a></div>
             formItem.append(formItem1);
             
-            //<div class="ui-grid-solo">
-            //  <div class="ui-block-a align-center"><a href="" data-play="pause" id="playPause"><img id="playPauseImg" src="css/play.png" class="imgbtnL1"></a></div>
-            //</div>
+            playForm = $("<div>", {class: "ui-grid-b"});
             
-            formItem2 = $("<div>", {class: "ui-grid-solo"});
-            subdiv = $("<div>", {class: "ui-block-a align-center"});
-            aItem2 = $("<a>", {href: "", 'data-play': "pause", id: "playPause"});
-            imgItem2 = $("<img>", {id: "playPauseImg", src: "css/buttons/play_active.png", class: "imgbtnL1"});
-            aItem2.append(imgItem2);
-            subdiv.append(aItem2);
-            formItem2.append(subdiv);
-            formItem.append(formItem2);
+            playDiv = $("<div>", {class: "ui-block-b align-center"});
+            playLink = $("<a>", {href: "", 'data-play': "pause", id: "playPause"});
+            var imgSrc = $("#play_active").attr('src');
+            playImg = $("<img>", {id: "playPauseImg", class: "imgbtnL1"}).attr('src', imgSrc);
+            playLink.append(playImg);
+            playDiv.append(playLink);
             
-            //<input id="volume" min="0" max="100" value="50" type="range" data-role="none" data-mini="true" data-theme="a" data-track-theme="b" data-highlight="true" style="display: none !important" />
-            //formItem3 = //$("<div>");
-            formItem3 = $("<input>", {id: "volume", min: "0", max: "100", value: "50", type: "range", 'data-role': "none", 'data-mini': "true", 'data-theme': "a", 'data-track-theme': "b", 'data-highlight': "true", style:"display: none !important"});
-            //formItem3.append(inputItem3);
-            formItem.append(formItem3);
+            backDiv = $("<div>", {class: "ui-block-a align-center"});
+            backLink = $("<a>", {href: "", id: "backBtn"});
+            var imgSrc = $("#back").attr('src');
+            backImg = $("<img>", {class: "imgbtnL2"}).attr('src', imgSrc);
+            backLink.append(backImg);
+            backDiv.append(backLink);
             
-            //<div id="carousel"><ul></ul></div>
+            nextDiv = $("<div>", {class: "ui-block-c align-center"});
+            nextLink = $("<a>", {href: "", id: "nextBtn"});
+            var imgSrc = $("#next").attr('src');
+            nextImg = $("<img>", {class: "imgbtnL2"}).attr('src', imgSrc);
+            nextLink.append(nextImg);
+            nextDiv.append(nextLink);
             
-            formItem4 = $("<div>", {id: "carousel"});
-            formItem4.append($("<ul>"));
-            formItem.append(formItem4);
+            playForm.append(backDiv);
+            playForm.append(playDiv);
+            playForm.append(nextDiv);
+            formItem.append(playForm);
+            
+            volumeInput = $("<input>", {id: "volume", min: "0", max: "100", value: "50", type: "range", 'data-role': "none", 'data-mini': "true", 'data-theme': "a", 'data-track-theme': "b", 'data-highlight': "true", style:"display: none !important"});
+            volumeDiv = $("<div>", {class: 'ui-block-a', style: 'padding: 5px 15px'});
+            volumeDiv.append(volumeInput);
+            volumeForm = $("<div>", {class: 'ui-grid-solo'});
+            volumeForm.append(volumeDiv);
+            formItem.append(volumeForm);
+            
+            carouselDiv = $("<div>", {id: "carousel"});
+            carouselDiv.append($("<ul>"));
+            formItem.append(carouselDiv);
+            
+            controlForm = $("<div>", {class: 'ui-grid-b align-center'});
+            playListDiv = $("<div>", {class: 'ui-block-a'});
+            playListBtn = $("<input>", {type: "button", id: "playListBtn", 'data-icon': "plus", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"});
+            playListDiv.append(playListBtn);
+            
+            audioDiv = $("<div>", {class: 'ui-block-b', style: 'margin-top: 20px'});
+            audioBtn = $("<input>", {type: "button", id: "audioBtn", 'data-icon': "audio", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"});
+            audioDiv.append(audioBtn);
+            
+            disconnectDiv = $("<div>", {class: 'ui-block-c'});
+            disconnectBtn = $("<input>", {type: "button", id: "disconnectBtn", 'data-icon': "delete", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"});
+            disconnectDiv.append(disconnectBtn);
+            
+            controlForm.append(playListDiv);
+            controlForm.append(audioDiv);
+            controlForm.append(disconnectDiv);
+            
+            formItem.append(controlForm);
             
             contentItem.append(formItem);
             
@@ -111,7 +148,8 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             tableItem.append(td1);
             
             var td2 = $("<td>", {style: "padding: 0px; margin: 0px"});
-            var logo = $("<img>", {src: "css/logo/logo2.png", style: "margin: 0 auto; height: 35px; float: right"});
+            var imgSrc = $("#logo").attr('src');
+            var logo = $("<img>", {style: "margin: 0 auto; height: 35px; float: right"}).attr('src', imgSrc);
             td2.append(logo);
             tableItem.append(td2);
             
@@ -132,9 +170,18 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
                         
             ui.playPauseBtn = $('#playPause');
             ui.playPauseImg = $('#playPauseImg');
+            
+            ui.nextBtn = $('#nextBtn');
+            ui.backBtn = $('#backBtn');
                                     
             ui.carousel = $("#carousel");
             ui.list = $("#carousel ul");
+            
+            ui.connectForm = $("#connectForm").collapsible();
+            
+            ui.disconnectBtn = $("#disconnectBtn");
+            ui.playListBtn = $("#playListBtn");
+            ui.audioBtn = $("#audioBtn");
             
             ui.registerEvents();
             
@@ -147,6 +194,8 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             var contentDiv = $("#remoteDiv"); //$("#remotePage['data-role'='content']");
             if (value) {
                 contentDiv.show();
+                $("#connectForm").collapsible("collapse");
+
                 /*
                 ui.volInput.slider("enable");
                 ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
@@ -160,6 +209,8 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             }
             else {
                 contentDiv.hide();
+                $("#connectForm").collapsible("expand");
+
                 /*
                 ui.volInput.slider("disable");
                 ui.playPauseBtn.off('click', ui.clickPlayPauseBtn);                
@@ -174,7 +225,10 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
         };
         
 	ui.registerEvents = function() {
-                ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);                
+                ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);
+                ui.backBtn.on('click', ui.clickBack);
+                ui.nextBtn.on('click', ui.clickNext);
+                
                 ui.volInput.on('change', ui.changeVolumeSlider);
                 ui.speakerBtn.on('click', ui.clickSpeakerBtn);
                 
@@ -188,6 +242,9 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
                     console.log("orientation change");
                     ui.initCarousel();
                 });
+                
+                ui.playListBtn.on("click", ui.goPlayList);
+                ui.audioBtn.on("click", ui.clickSpeakerBtn);
                 
                 // slide
                 $("#remotePage").on("swiperight", ui.goSearch);
@@ -281,11 +338,13 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
         ui.setPlayPause = function(value) {            
             if (value ) {
                 ui.playPauseBtn.attr('data-play', "play");
-                ui.playPauseImg.attr('src', 'css/buttons/pause_active.png');
+                var imgSrc = $("#pause_active").attr('src');
+                ui.playPauseImg.attr('src', imgSrc);
             }
             else {
                 ui.playPauseBtn.attr('data-play', "pause");
-                ui.playPauseImg.attr('src', 'css/buttons/play_active.png');
+                var imgSrc = $("#play_active").attr('src');
+                ui.playPauseImg.attr('src', imgSrc);
             }
         };
         

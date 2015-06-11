@@ -21,8 +21,14 @@ define(["firebase", "jquery", "jqueryMobile"], function() {
             
             //dBackend.connected = false;
             dBackend.connectBtn = $("#connect");
+            
+            dBackend.disconnectBtn = $("#disconnectBtn");
+            
             dBackend.monitorIdInput = $("#monitorId");
             dBackend.connectBtn.on("click", dBackend.clickConnect); 
+            
+            dBackend.disconnectBtn.on("click", dBackend.clickDisconnect);
+            
             dBackend.monitorIdInput.keypress(function( event ) {
                 if (event.which == 13) {
                     event.preventDefault();
@@ -114,13 +120,16 @@ define(["firebase", "jquery", "jqueryMobile"], function() {
                 dBackend.connectBtn.off("click", dBackend.clickDisconnect);
                 dBackend.connectBtn.button("option", "icon", "check");
                 dBackend.connectBtn.on("click", dBackend.clickConnect);
+                $("#connectForm").collapsible("expand");
             }
             else if (status === 2) {
                 dBackend.connectBtn.off("click", dBackend.clickConnect);
                 dBackend.connectBtn.button("option", "icon", "delete");
                 dBackend.connectBtn.on("click", dBackend.clickDisconnect);
+                $("#connectForm").collapsible("collapse");
+
             }
-            $("#connectForm").collapsible("collapse");
+            //$("#connectForm").collapsible("collapse");
         };
         
         dBackend.setConnectCallback = function(callback) {
