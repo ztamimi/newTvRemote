@@ -7,29 +7,22 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         //var header = ui.renderHeader();
         //pageItem.append(header);
         
-        var headerItem = $("<div>");
-        var formItem = $("<form>");
-        var tableItem = $("<table>", {width: "100%"});
+        var toolbarDiv = $("<div>");
+        var toolbarForm = $("<form>");
+        var table = $("<table>", {width: "100%"});
             
-        //<a href="#my-header" data-rel="close">Close panel</a>
-        var tdItem0 = $("<td>", {width: "10%"});
-        var inputItem0 = $("<input>", {type: "button", id: "backBtn", value: "back", 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'back', 'data-iconpos': 'notext'});
-        tdItem0.append(inputItem0);
-        tableItem.append(tdItem0);
+        var backToListBtn = $("<td>", {width: "10%"}).append($("<input>", {type: "button", id: "backToListBtn", value: "back", 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'back', 'data-iconpos': 'notext'}));
+        table.append(backToListBtn);
         
-        var tdItem1 = $("<td>", {width: "80%"});
-        var inputItem1 = $("<input>", {id: "searchKeyword", placeholder: 'search...', type: "text"});
-        tdItem1.append(inputItem1);
-        tableItem.append(tdItem1);
+        var searchInput = $("<td>", {width: "80%"}).append($("<input>", {id: "searchInputId", placeholder: 'enter search keywords...', type: "text"}));
+        table.append(searchInput);
             
-        var tdItem2 = $("<td>", {width: "10%"});
-        var inputItem2 = $("<input>", {type: "button", id: "searchBtn", value: "search", 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'search', 'data-iconpos': 'notext'});
-        tdItem2.append(inputItem2);
-        tableItem.append(tdItem2);
+        var searchBtn = $("<td>", {width: "10%"}).append($("<input>", {type: "button", id: "searchBtnId", value: "search", 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'search', 'data-iconpos': 'notext'}));
+        table.append(searchBtn);
             
-        formItem.append(tableItem);
-        headerItem.append(formItem);
-        pageItem.append(headerItem);
+        toolbarForm.append(table);
+        toolbarDiv.append(toolbarForm);
+        pageItem.append(toolbarDiv);
             
         var contentItem = $("<div>", {'data-role': "content"});
         contentItem.append($("<ul>", {id: "searchResult", 'data-role': "listview", class: "ui-overlay-shadow", 'data-split-icon': "plus"}));
@@ -43,7 +36,7 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         pageItem.append(divItem);
         
         var itemDesc = $("<div>", {id: "itemDesc", 'data-role': "popup", 'data-theme': "a", 'data-overlay-theme': "b", 'data-transition': "slide", class: "ui-content"});
-        var closeBtn = $("<a>", {href: "#", 'data-rel': "back", 'data-role': "button", 'data-theme': "a", 'data-icon': "delete", 'data-iconpos': "notext", 'class': "ui-btn-left"});
+        var closeBtn = $("<a>", {href: "#", id: "closeDescBtn", 'data-role': "button", 'data-theme': "a", 'data-icon': "delete", 'data-iconpos': "notext", 'class': "ui-btn-left"});
         itemDesc.append(closeBtn);
         itemDesc.append($("<p>", {class: 'title'}));
         itemDesc.append($("<br>"));
@@ -56,19 +49,23 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
     search.init = function() {
         search.render();
         search.list = $("#searchResult");
-        search.keyword = $("#searchKeyword");
+        search.searchInput = $("#searchInputId");
+        search.searchBtn = $("#searchBtnId");
+        search.backToListBtn = $("#backToListBtn");
         //$("#searchPage").panel();
     
-        $("#searchBtn").on('click', search.clickSearch);
-        $("#backBtn").on('click', search.clickBack);
-        search.keyword.keypress(function( event ) {
+        search.searchBtn.on('click', search.clickSearch);
+        search.searchInput.keypress(function( event ) {
             if (event.which == 13) {
                 event.preventDefault();
                 search.clickSearch();
             }
         });
+        search.backToListBtn.on('click', search.clickGoToList);
+
         search.list.on('click', 'li a.add', search.clickAddVideo);
         search.list.on('click', 'li a.data', search.clickItem);
+        $("#closeDescBtn").on("click", search.clickCloseDesc);
         $('#searchItemAdded').on("popupafteropen", function(event, ui) {$('#searchItemAdded').popup("close")});
 
         
@@ -76,20 +73,16 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         $("#searchPage").on("swipeleft", search.goRemote);
     };
     
-        search.goRemote = function() {
-            $.mobile.changePage("#remotePage", {transition: "slide", changeHash: false});
-        };
-        
-        search.goPlayList = function() {
-            $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false, reverse: true});
-        };
-    
-    search.clickBack = function() {
+    search.clickGoToList = function() {
         $("#searchPage").panel("close");
     };
     
+    search.clickCloseDesc = function() {
+        $("#itemDesc").popup("close");
+    }
+    
     search.clickSearch = function() {
-        var keyword = search.keyword.val();
+        var keyword = search.searchInput.val();
         if (!keyword)
             return;
         console.log(keyword);
@@ -97,8 +90,8 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         search.search(keyword);
     };
     
-    search.setSearchKeyword = function(keyword) {
-        search.keyword.val(keyword);
+    search.setSearchInput = function(keyword) {
+        search.searchInput.val(keyword);
     };
     
     search.clickItem = function() {

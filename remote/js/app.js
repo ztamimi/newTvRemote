@@ -37,9 +37,8 @@ require(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui
         ui.enable(false);
         list.enable(false);
     };
-
-    list.init();
     ui.init();
+    list.init();
     ui.setUpdateByUiCallback(list.updateByUi);
     
     search.init();

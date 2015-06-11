@@ -6,29 +6,24 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             var pageItem = $("<div>", {'data-role': 'page', id: 'playListPage', 'data-theme': 'b'});
             var header = ui.renderHeader();
             pageItem.append(header);
-            var headerItem = $("<div>");
-            var formItem = $("<form>");
-            var tableItem = $("<table>", {width: '100%'});
-            var tdItem1 = $("<td>", {width: '80%'});
-            var inputItem1 = $("<input>", {type: 'url', id: 'url', placeholder: 'copy the url of a youtube video here...', 'data-mini': 'true', 'data-inline': 'true'});
-            tdItem1.append(inputItem1);
-            tableItem.append(tdItem1);
             
-            var tdItem2 = $("<td>", {width: '10%'});
-            var inputItem2 = $("<input>", {'type':'button', id:'addUrl', value:'Add Video', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'plus', 'data-iconpos': 'notext'});
-            tdItem2.append(inputItem2);
-            tableItem.append(tdItem2);
-            //formItem.append(tableItem);
-            //headerItem.append(formItem);
+            var toolbarDiv = $("<div>");
+            var toolbarForm = $("<form>");
+            var table = $("<table>", {width: '100%'});
+           
+            var backToRemoteBtn = $("<td>", {width: '10%'}).append($("<input>", {'type':'button', id:'backToRemoteBtn', value:'back', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'back', 'data-iconpos': 'notext'}));
+            table.append(backToRemoteBtn);
             
-            var tdItem3 = $("<td>", {width: '10%'});
-            var inputItem3 = $("<input>", {'type':'button', id:'searchVideo', value:'Search Video', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'search', 'data-iconpos': 'notext'});
-            tdItem3.append(inputItem3);
-            tableItem.append(tdItem3);
-            formItem.append(tableItem);
-            headerItem.append(formItem);
+            var actionInput = $("<td>", {width: '80%'}).append($("<input>", {type: 'text', id: 'actionInput', placeholder: 'enter url to keywords ...', 'data-mini': 'true', 'data-inline': 'true'}));
+            table.append(actionInput);
             
-            pageItem.append(headerItem);
+            var actionBtn = $("<td>", {width: '10%'}).append($("<input>", {'type':'button', id:'actionBtn', value:'Go', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'action', 'data-iconpos': 'notext'}));
+            table.append(actionBtn);
+            
+            toolbarForm.append(table);
+            toolbarDiv.append(toolbarForm);
+            
+            pageItem.append(toolbarDiv);
             
             var contentItem = $("<div>", {'data-role': 'content'});
             var ulItem = $("<ul>", {id: 'videoList', 'data-role': 'listview', class: 'ui-overlay-shadow', 'data-split-icon': 'delete'});
@@ -42,9 +37,12 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
         
 	list.init = function() {
             list.render();
-            list.addUrlBtn = $("#addUrl");
-            list.searchVideoBtn = $("#searchVideo");
-            list.urlInput = $("#url");
+            //list.addUrlBtn = $("#addUrl");
+            //list.searchVideoBtn = $("#searchVideo");
+            list.actionBtn = $("#actionBtn");
+            list.backToRemoteBtn = $("#backToRemoteBtn");
+            //list.urlInput = $("#url");
+            list.actionInput = $("#actionInput");
             list.videoList = $("#videoList");
             list.videoList.listview();
             
@@ -53,9 +51,11 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
 	};
 
 	list.registerEvents = function() {
-            list.addUrlBtn.on("click", list.clickAddVideo);
-            list.searchVideoBtn.on("click", list.clickSearchVideo);
-            list.urlInput.keypress(function( event ) {
+            //list.addUrlBtn.on("click", list.clickAddVideo);
+            //list.searchVideoBtn.on("click", list.clickSearchVideo);
+            list.actionBtn.on("click", list.clickAddVideo);
+            list.backToRemoteBtn.on("click", list.goRemote);
+            list.actionInput.keypress(function( event ) {
                 if (event.which == 13) {
                     event.preventDefault();
                     list.clickAddVideo();
@@ -120,12 +120,12 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             ui.highLightItem(index);
         };
         
-        list.clickSearchVideo = function() {
-            var keyword = list.urlInput.val();
+        list.clickSearchVideo = function(keyword) {
+            //var keyword = list.urlInput.val();
             if (keyword) {
-                list.search.setSearchKeyword(keyword);
+                list.search.setSearchInput(keyword);
                 list.search.clickSearch();
-                list.urlInput.val("");
+                //list.urlInput.val("");
             }
             $("#searchPage").panel("open");
         };
@@ -134,9 +134,16 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             if (!list.videoList)
                 return;
             
-            var videoId = list.getVideoId();
+            var input = list.actionInput.val();
+            
+            //if (!input)
+            //    return;
+            
+            var videoId = list.getVideoId(input);
+            
+            list.actionInput.val("");
+            
             if (videoId) {
-                list.urlInput.val("");
                 if (control.playList.indexOf(videoId) >= 0)  // video already exists
                     return;
                 
@@ -144,7 +151,7 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
                 control.addVideo(videoId);
             }
             else
-                list.clickSearchVideo();
+                list.clickSearchVideo(input);
         };
         
         list.clickDeleteVideo = function() {
@@ -163,8 +170,8 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             //ui.removeCarouselItem(videoId);
         };
         
-        list.getVideoId = function() {
-            var url = list.urlInput.val();
+        list.getVideoId = function(url) {
+            //var url = list.urlInput.val();
             var temp = url.toLowerCase();
             
             if (!url)
