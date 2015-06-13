@@ -11,7 +11,7 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
             var toolbarForm = $("<form>");
             var table = $("<table>", {width: '100%'});
            
-            var backToRemoteBtn = $("<td>", {width: '10%'}).append($("<input>", {'type':'button', id:'backToRemoteBtn', value:'back', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'back', 'data-iconpos': 'notext'}));
+            var backToRemoteBtn = $("<td>", {width: '10%'}).append($("<input>", {'type':'button', id:'backToRemoteBtn', value:'back', 'data-mini': 'true', 'data-inline': 'true', 'data-icon': 'home', 'data-iconpos': 'notext'}));
             table.append(backToRemoteBtn);
             
             var actionInput = $("<td>", {width: '80%'}).append($("<input>", {type: 'text', id: 'actionInput', placeholder: 'enter url to keywords ...', 'data-mini': 'true', 'data-inline': 'true'}));
@@ -51,8 +51,6 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
 	};
 
 	list.registerEvents = function() {
-            //list.addUrlBtn.on("click", list.clickAddVideo);
-            //list.searchVideoBtn.on("click", list.clickSearchVideo);
             list.actionBtn.on("click", list.clickAddVideo);
             list.backToRemoteBtn.on("click", list.goRemote);
             list.actionInput.keypress(function( event ) {
@@ -62,22 +60,14 @@ define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(con
                 }
             });
             list.videoList.on('click', 'li a.data', list.clickItem);
-            list.videoList.on('click', 'li a.delete', list.clickDeleteVideo);
-                
-            $("#playListPage").on("swiperight", list.goRemote);
-            $("#playListPage").on("swipeleft", list.goSearch);
-            
+            list.videoList.on('click', 'li a.delete', list.clickDeleteVideo);            
 	};
         
         /////////// transitions /////////////
-        list.goSearch = function() {
-            $.mobile.changePage("#searchPage", {transition: "slide", changeHash: false});
-        };
         
         list.goRemote = function() {
             $.mobile.changePage("#remotePage", {transition: "slide", changeHash: false, reverse: "true"});
         };
-        
         
         list.enable = function(value) {
             if (value) {

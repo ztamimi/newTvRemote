@@ -4,8 +4,6 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
     
     search.render = function() {
         var pageItem = $("<div>", {'data-role': "panel", id: "searchPage", 'data-position': "right", 'data-display':"overlay", 'data-theme': 'b'});
-        //var header = ui.renderHeader();
-        //pageItem.append(header);
         
         var toolbarDiv = $("<div>");
         var toolbarForm = $("<form>");
@@ -28,10 +26,7 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         contentItem.append($("<ul>", {id: "searchResult", 'data-role': "listview", class: "ui-overlay-shadow", 'data-split-icon': "plus"}));
         pageItem.append(contentItem);
             
-        //var footerItem = ui.renderFooter();
-        //pageItem.append(footerItem);
-            
-        var divItem = $("<div>", {id: "searchItemAdded", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content"});
+        var divItem = $("<div>", {id: "searchItemAdded", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content popup_message"});
         divItem.text("item added");
         pageItem.append(divItem);
         
@@ -66,11 +61,10 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         search.list.on('click', 'li a.add', search.clickAddVideo);
         search.list.on('click', 'li a.data', search.clickItem);
         $("#closeDescBtn").on("click", search.clickCloseDesc);
-        $('#searchItemAdded').on("popupafteropen", function(event, ui) {$('#searchItemAdded').popup("close")});
-
-        
-        $("#searchPage").on("swiperight", search.goPlayList);
-        $("#searchPage").on("swipeleft", search.goRemote);
+        $('#searchItemAdded').on("popupafteropen", function(event, ui) {
+            $('#searchItemAdded').popup("close");
+            $.mobile.changePage("#searchPage", {transition: "none", changeHash: false});
+        });
     };
     
     search.clickGoToList = function() {
@@ -79,7 +73,8 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
     
     search.clickCloseDesc = function() {
         $("#itemDesc").popup("close");
-    }
+        $.mobile.changePage("#searchPage", {transition: "none", changeHash: false});
+    };
     
     search.clickSearch = function() {
         var keyword = search.searchInput.val();
@@ -113,7 +108,6 @@ define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, 
         ui.addSearchResult(videoId, title, imgUrl);
         
         $(this).attr('class', 'ui-btn ui-btn-icon-notext ui-icon-check');
-        //$(this).attr('href', '#');
         
         $("<a>", {href:'#searchItemAdded', 'data-transition':'slideup', 'data-rel':'popup', class:'add ui-btn ui-btn-icon-notext ui-icon-plus', title:'Add'});
     };

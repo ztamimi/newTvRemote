@@ -13,7 +13,7 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             connectForm.append($("<legend>").text("Connect to monitor"));
             
             var table = $("<table>", {width: '100%'});
-            var monitorInput = $("<td>").append($("<input>", {type: "text", id: "monitorId", value: "", placeholder: "Monitor ID...", 'data-mini': "true", 'data-inline': "true"}));
+            var monitorInput = $("<td>").append($("<input>", {type: "text", id: "monitorId", value: "", placeholder: "Monitor ID...", 'data-inline': "true", 'data-theme': 'a'}));
             var connectBtn = $("<td>").append($("<input>", {type: "button", id: "connect", 'data-icon': "check", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"}));
             table.append(monitorInput);            
             table.append(connectBtn);
@@ -32,7 +32,7 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             connectDiv.append(connectForm);
             pageItem.append(connectDiv);
             
-            var connectStatusDiv = $("<div>", {id: "connectStatus", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content"});
+            var connectStatusDiv = $("<div>", {id: "connectStatus", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content popup_message"});
             connectStatusDiv.text("connecting...");
             pageItem.append(connectStatusDiv);
             
@@ -67,11 +67,11 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             backBtn = $("<input>", {type: "button", id: "backBtn", 'data-icon': "carat-l", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"});
             backDiv.append(backBtn);
             
-            playListDiv = $("<div>", {class: 'ui-block-b', style: 'margin-top: 15px'});
+            playListDiv = $("<div>", {class: 'ui-block-b', style: 'margin-top: 25px'});
             playListBtn = $("<input>", {type: "button", id: "playListBtn", 'data-icon': "plus", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"});
             playListDiv.append(playListBtn);
             
-            audioDiv = $("<div>", {class: 'ui-block-c', style: 'margin-top: 25px'});
+            audioDiv = $("<div>", {class: 'ui-block-c', style: 'margin-top: 15px'});
             audioBtn = $("<input>", {type: "button", id: "audioBtn", 'data-icon': "audio", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"});
             audioDiv.append(audioBtn);
             
@@ -84,8 +84,8 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             nextDiv.append(nextBtn);
             
             controlForm.append(backDiv);
-            controlForm.append(playListDiv);
             controlForm.append(audioDiv);
+            controlForm.append(playListDiv);
             controlForm.append(disconnectDiv);
             controlForm.append(nextDiv);
             
@@ -128,7 +128,7 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
             var tableItem = $("<table>", {style: "width: 100%"});
             
             var td1 = $("<td>", {style: "width: 75%; padding: 0px; margin: 0px"});
-            var heading = $("<h1>", {style: 'margin: 0 auto; font-family: "Generica Bold"'}).text("MoboRemote");
+            var heading = $("<h1>", {style: 'margin: 0 auto; font-family: "pacificoregular"'}).text("MoboRemote");
             td1.append(heading);
             tableItem.append(td1);
             
@@ -208,20 +208,15 @@ define(["modules/control", "jquery", "jqueryMobile"], function(control) {
                 ui.audioBtn.on("click", ui.clickAudioBtn);
                 
                 // slide
-                $("#remotePage").on("swiperight", ui.goSearch);
-                $("#remotePage").on("swipeleft", ui.goPlayList);
+                //$("#remotePage").on("swiperight", ui.goSearch);
+                //$("#remotePage").on("swipeleft", ui.goPlayList);
                 
 	};
         /////////// transitions /////////////
-        ui.goSearch = function(event) {
-            if (event.target.className === "slideImg")
-                return;
-            $.mobile.changePage("#searchPage", {transition: "slide", changeHash: false, reverse: "true"});
-        };
         
         ui.goPlayList = function(event) {
-            if (event.target.className === "slideImg")
-                return;
+            //if (event.target.className === "slideImg")
+            //    return;
             $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false});
         };
         
