@@ -24,7 +24,6 @@ define(["firebase"], function() {
        
         backEnd.listen = function() {
             backEnd.monitorIdText = $("#monitorId");
-            //backEnd.monitorId = "xyz";//backEnd.generateId();
             backEnd.monitorIdText.text(backEnd.monitorId);
             backEnd.sessionId = null;
             var temp = backEnd.url + backEnd.appName + '/' + backEnd.monitorId + '/';
@@ -42,7 +41,7 @@ define(["firebase"], function() {
             backEnd.sessionId = null;
             backEnd.monitorRef.update({"connectTo": 0});
             backEnd.monitorRef.update({"status": 0});
-            backEnd.ref = null
+            backEnd.ref = null;
             backEnd.dataRef = null;
             backEnd.listRef = null;
         };

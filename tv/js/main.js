@@ -18,7 +18,7 @@ require(['modules/utilities', 'modules/backEnd', 'modules/tv', 'modules/ytplayer
     
     var id = utilities.getCookie("monitorId");
     if (!id) {
-        id = utilities.generateRandomStr(3);
+        id = utilities.generateRandomStr(5);
         utilities.setCookie("monitorId", id);
     }
     backEnd.setMonitorId(id);
@@ -44,16 +44,7 @@ require(['modules/utilities', 'modules/backEnd', 'modules/tv', 'modules/ytplayer
         tv.setUiValueCallback(ytplayer.updateValueByTv);
         tv.setUiListCallback(ytplayer.updateListByTv);
     
-  
-    //var sessionId = "abc123";              
-    //backEnd.setUrl('https://blazing-heat-3187.firebaseio.com/');
-    //backEnd.setAppName('tvRemote');
-    //backEnd.connect("xyz");
-    //backEnd.setSessionId(sessionId);
-    
         tv.init();
-    
-    //backEnd.init();
     
         backEnd.setUpdateValueCallback(tv.updateValueByBackEnd);
         backEnd.setUpdateListCallback(tv.updateListByBackEnd);
