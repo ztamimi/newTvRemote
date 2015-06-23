@@ -1,5 +1,5 @@
 // search object
-define(["modules/list", "modules/ui", "jquery", "jqueryMobile"], function(list, ui) {
+define(["modules/list", "modules/ui", "jquery", "jquerymobile"], function(list, ui) {
     var search = {};
     
     search.render = function() {

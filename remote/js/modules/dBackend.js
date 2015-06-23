@@ -1,5 +1,5 @@
 // dBackend object
-define(["firebase", "jquery", "jqueryMobile"], function() {
+define(["firebase", "jquery", "jquerymobile"], function() {
 	var dBackend = {};
         
 	dBackend.init = function() {

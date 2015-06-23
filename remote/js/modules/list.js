@@ -1,5 +1,5 @@
 // list object
-define(["modules/control", "modules/ui", "jquery", "jqueryMobile"], function(control, ui) {
+define(["modules/control", "modules/ui", "jquery", "jquerymobile"], function(control, ui) {
 	var list = {};
 
         list.render = function() {

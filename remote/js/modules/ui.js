@@ -1,5 +1,5 @@
 // ui object
-define(["modules/control", "jquery", "jqueryMobile"], function(control) {
+define(["modules/control", "jquery", "jquerymobile"], function(control) {
 	var ui = {};
         
         ui.render = function() {
