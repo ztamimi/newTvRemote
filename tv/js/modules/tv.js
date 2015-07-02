@@ -13,6 +13,7 @@ define(["modules/backEnd"], function(backEnd) {
             //tv.play = false;
             tv.play = null;
 	};
+        
         /*
         tv.set = function (volume, play, index) {
             tv.updateByUi('volume', volume);

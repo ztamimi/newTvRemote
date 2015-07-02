@@ -3,31 +3,51 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/jqm-icon-pack-fa.css">
+    <link rel="stylesheet" href="css/tv.css">
     <title>MoboRemote</title>   
 </head>
 
 <body>
     
-    <div data-role="page" id="welcome" data-theme='b'>            
-        <div data-role="content">
-            <p>Monitor Id</p>
-            <p id="monitorId"></p>
+    <div data-role="page" id="welcome" data-theme='b'>
+        <div data-role="header" data-position="fixed">
+            <table style="width: 100%">
+                <td style= "width: 75%; padding: 0px; margin: 0px">
+                    <h1 style= 'margin: 0 auto; font-family: "pacificoregular"'>MoboRemote</h1>
+                </td>        
+                <td style= "padding: 0px; margin: 0px">
+                    <img height='80' style="margin: 0 auto; float: right" src='data:image/png;base64,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'>
+                </td>
+            </table>
         </div>
-        <div data-role="footer" data-position="fixed" data-theme='b'>
-
+        <div data-role="content">
+            
+                <div style="font-family: 'Times New Roman, serif'">Monitor Id:</div>
+                <br><br>
+                <div align="center" id="monitorId" style="padding-left: 15px; font-family: 'Times New Roman, serif'; font-stretch: ultra-expanded; font-size: 3em; font-weight: bold;"></div> 
+                <br><br><br><br>
+                <div><input type="button" id="resetBtn" value="Reset" data-mini="true" data-theme='a'></div>
+            
+        </div>
+        
+        <div data-role="footer" data-position="fixed">
+            <nav data-role="navbar">
+                <ul>
+                    <li><a data-icon='android' href='https://play.google.com/store/apps/details?id=zmt.moboremote'></a></li>
+                    <li><a data-icon='facebook' href='https://www.facebook.com/moboRemoteApp'></a></li>
+                    <li><a data-icon='twitter' href='#'></a></li>
+                </ul>
+            </nav>
         </div>
     </div>
     
     <div data-role="page" id="tv" data-theme='b'>        
-        
-        
         <div data-role="content">
             <div id="player"></div>
-                                      
         </div>
     
-        <div data-role="footer" data-position="fixed" data-theme='b'>
-
+        <div data-role="footer" data-position="fixed">
         </div>
     </div>
     

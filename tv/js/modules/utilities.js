@@ -1,6 +1,18 @@
 // utilities object
 define([""], function() {
     var utilities = {};
+    
+    utilities.init = function() {
+        utilities.resetBtn = $("#resetBtn");
+        utilities.resetBtn.on("click", utilities.reset);
+    };
+    
+    utilities.reset = function() {
+        console.log("reset");
+        var id = utilities.generateRandomStr(5);
+        utilities.setCookie("monitorId", id);
+        location.reload();
+    };
         
     utilities.setCookie = function(key, value) {  
         var expires = new Date();  
@@ -14,7 +26,7 @@ define([""], function() {
     };
     
     utilities.generateRandomStr = function(length) {
-                var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+                var chars = "0123456789abcdefghiklmnopqrstuvwxyz";
                 var string_length = 6;
                 
                 if (length)

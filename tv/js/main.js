@@ -14,7 +14,9 @@ requirejs(["jqueryMobile"]);
 require(['modules/utilities', 'modules/backEnd', 'modules/tv', 'modules/ytplayer'], function(utilities, backEnd, tv, ytplayer) {
    
     backEnd.setUrl('https://blazing-heat-3187.firebaseio.com/');
-    backEnd.setAppName('tvRemote');
+    backEnd.setAppName('tvRemoteTest');
+    
+    utilities.init();
     
     var id = utilities.getCookie("monitorId");
     if (!id) {
