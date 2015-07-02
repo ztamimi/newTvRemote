@@ -26,11 +26,11 @@ define(["modules/list", "modules/ui", "jquery", "jquerymobile"], function(list, 
         contentItem.append($("<ul>", {id: "searchResult", 'data-role': "listview", class: "ui-overlay-shadow", 'data-split-icon': "plus"}));
         pageItem.append(contentItem);
             
-        var divItem = $("<div>", {id: "searchItemAdded", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content popup_message"});
+        var divItem = $("<div>", {id: "searchItemAdded", 'data-role': "popup", 'data-history': false, 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content popup_message"});
         divItem.text("item added");
         pageItem.append(divItem);
         
-        var itemDesc = $("<div>", {id: "itemDesc", 'data-role': "popup", 'data-theme': "a", 'data-overlay-theme': "b", 'data-transition': "slide", class: "ui-content"});
+        var itemDesc = $("<div>", {id: "itemDesc", 'data-role': "popup", 'data-history': false, 'data-theme': "a", 'data-overlay-theme': "b", 'data-transition': "slide", class: "ui-content"});
         var closeBtn = $("<a>", {href: "#", id: "closeDescBtn", 'data-role': "button", 'data-theme': "a", 'data-icon': "delete", 'data-iconpos': "notext", 'class': "ui-btn-left"});
         itemDesc.append(closeBtn);
         itemDesc.append($("<p>", {class: 'title'}));
@@ -63,7 +63,7 @@ define(["modules/list", "modules/ui", "jquery", "jquerymobile"], function(list, 
         $("#closeDescBtn").on("click", search.clickCloseDesc);
         $('#searchItemAdded').on("popupafteropen", function(event, ui) {
             $('#searchItemAdded').popup("close");
-            $.mobile.changePage("#searchPage", {transition: "none", changeHash: false});
+            //$.mobile.changePage("#searchPage", {transition: "none", changeHash: false});
         });
     };
     
@@ -73,7 +73,7 @@ define(["modules/list", "modules/ui", "jquery", "jquerymobile"], function(list, 
     
     search.clickCloseDesc = function() {
         $("#itemDesc").popup("close");
-        $.mobile.changePage("#searchPage", {transition: "none", changeHash: false});
+        //$.mobile.changePage("#searchPage", {transition: "none", changeHash: false});
     };
     
     search.clickSearch = function() {

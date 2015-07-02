@@ -30,21 +30,23 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             connectForm.append(disconnectInfo);
             
             connectDiv.append(connectForm);
+            
             pageItem.append(connectDiv);
             
-            var connectStatusDiv = $("<div>", {id: "connectStatus", 'data-role': "popup", 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content popup_message"});
+            var connectStatusDiv = $("<div>", {id: "connectStatus", 'data-role': "popup", 'data-history': false, 'data-theme': "none", 'data-overlay-theme': "b", 'data-transition': "fade", class: "ui-content popup_message"});
             connectStatusDiv.text("connecting...");
             pageItem.append(connectStatusDiv);
             
-            var contentItem = $("<div>", {id: "remoteDiv", 'data-role': "content", class: "noMargins"});
+            var contentItem = $("<div>", {'data-role': "content", class: "noMargins"});
+            var remoteDiv = $("<div>", {id: "remoteDiv"});
             var formItem = $("<form>");
             
             playForm = $("<div>", {class: "ui-grid-solo", style: 'padding-top: 15px'});
             
             playDiv = $("<div>", {class: "ui-block-a align-center"});
             playLink = $("<a>", {href: "", 'data-play': "pause", id: "playPause"});
-            var imgSrc = $("#playUri").attr('src');
-            playImg = $("<img>", {id: "playPauseImg", class: "imgbtnL1"}).attr('src', imgSrc);
+            //var imgSrc = $("#playUri").attr('src');
+            playImg = $("<img>", {id: "playPauseImg", class: "imgbtnL1", src: "css/images/play.png"});//.attr('src', imgSrc);
             playLink.append(playImg);
             playDiv.append(playLink);
             
@@ -91,14 +93,28 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             
             formItem.append(controlForm);
             
-            contentItem.append(formItem);
+            remoteDiv.append(formItem);
+            contentItem.append(remoteDiv);
             
             pageItem.append(contentItem);
             
             var footerItem = ui.renderFooter();
             pageItem.append(footerItem);
+
+            /*
+            var a = document.getElementsByTagName("body")[0];
+            var b = a.childNodes;
+            
+            for(i=0; i< b.length; i++)
+                a.removeChild(b[i]);
+            */
+            $("body").css("background", "blue");
             
             $("body").append(pageItem);
+        };
+        
+        ui.popVideo = function() {
+            //$("#popupVideo").popup("open");
         };
         
         ui.renderFooter = function() {
@@ -114,7 +130,6 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             var aItem3 = $("<a>", {'data-icon': 'plus', href: '#playListPage'});
             liItem3.append(aItem3);
                 
-            //ulItem.append(liItem1);
             ulItem.append(liItem2);
             ulItem.append(liItem3);
                 
@@ -133,8 +148,8 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             tableItem.append(td1);
             
             var td2 = $("<td>", {style: "padding: 0px; margin: 0px"});
-            var imgSrc = $("#logo").attr('src');
-            var logo = $("<img>", {style: "margin: 0 auto; height: 35px; float: right"}).attr('src', imgSrc);
+            //var imgSrc = $("#logo").attr('src');
+            var logo = $("<img>", {style: "margin: 0 auto; height: 35px; float: right", src: "css/images/logo.png"});//.attr('src', imgSrc);
             td2.append(logo);
             tableItem.append(td2);
             
@@ -177,11 +192,11 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             var contentDiv = $("#remoteDiv"); //$("#remotePage['data-role'='content']");
             if (value) {
                 contentDiv.show();
-                $("#connectForm").collapsible("collapse");
+                //$("#connectForm").collapsible("collapse");
             }
             else {
                 contentDiv.hide();
-                $("#connectForm").collapsible("expand");
+                //$("#connectForm").collapsible("expand");
             }
         };
         
@@ -206,17 +221,10 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
                 
                 ui.playListBtn.on("click", ui.goPlayList);
                 ui.audioBtn.on("click", ui.clickAudioBtn);
-                
-                // slide
-                //$("#remotePage").on("swiperight", ui.goSearch);
-                //$("#remotePage").on("swipeleft", ui.goPlayList);
-                
 	};
         /////////// transitions /////////////
         
         ui.goPlayList = function(event) {
-            //if (event.target.className === "slideImg")
-            //    return;
             $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false});
         };
         
@@ -244,9 +252,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
         
         ui.changeVolumeSlider = function() {
             var volume = parseInt(ui.volInput.val());
-            
-            //ui.setSpeaker(volume);
-           
+                       
             control.updateByUi("volume", volume);
         };
         
@@ -265,20 +271,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             
             control.updateByUi("volume", volume);
         };
-        /*
-        ui.clickSpeakerBtn = function() {
-            var newVolumeValue;
-            if (ui.speakerBtn.attr('data-func') === 'speaker')
-                newVolumeValue = 0;
-            else
-                newVolumeValue = 25;
-            
-            ui.setSpeaker(newVolumeValue);
-            ui.setVolume(newVolumeValue);
-            
-            control.updateByUi("volume", newVolumeValue);
-        };
-        */
+        
         ui.updateValueByControl = function(key, value) {
             
             console.log("ui.updateValueByControl called " + key + ":" + value);
@@ -310,13 +303,13 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
         ui.setPlayPause = function(value) {            
             if (value ) {
                 ui.playPauseBtn.attr('data-play', "play");
-                var imgSrc = $("#pauseUri").attr('src');
-                ui.playPauseImg.attr('src', imgSrc);
+                //var imgSrc = $("#pauseUri").attr('src');
+                ui.playPauseImg.attr('src', "css/images/pause.png");//imgSrc);
             }
             else {
                 ui.playPauseBtn.attr('data-play', "pause");
-                var imgSrc = $("#playUri").attr('src');
-                ui.playPauseImg.attr('src', imgSrc);
+                //var imgSrc = $("#playUri").attr('src');
+                ui.playPauseImg.attr('src', "css/images/play.png");//imgSrc);
             }
         };
         

@@ -13,7 +13,6 @@ define(["firebase", "jquery", "jquerymobile"], function() {
                 else {
                     dBackend.newDeviceCallback();
                 }
-                
             });
             
             dBackend.dataRef = dBackend.ref.child("data");
@@ -59,7 +58,7 @@ define(["firebase", "jquery", "jquerymobile"], function() {
                         dBackend.monitorRef.on('child_changed', dBackend.onStatusChange);
                     }
                     else 
-                        dBackend.connectError(1)
+                        dBackend.connectError(1);
                 }
                 else 
                     dBackend.connectError(2);
@@ -80,6 +79,7 @@ define(["firebase", "jquery", "jquerymobile"], function() {
                 dBackend.monitorRef = null;
                 dBackend.flip(1);
                 dBackend.connectError(3);
+                dBackend.disconnectCallback();
             }
         };
         
@@ -103,7 +103,10 @@ define(["firebase", "jquery", "jquerymobile"], function() {
             
             $("#connectStatus").text(message);
             $("#connectStatus").popup("open", {"positionTo": "#connectForm"});
-            setTimeout(function(){$("#connectStatus").popup("close");}, 2000);
+            setTimeout(function(){
+                        $("#connectStatus").popup("close"); 
+                        //$.mobile.changePage("#remotePage", {transition: "none", changeHash: false});
+                    }, 2000);
         };
         
         dBackend.clickDisconnect = function() {
@@ -111,7 +114,7 @@ define(["firebase", "jquery", "jquerymobile"], function() {
             dBackend.flip(1);
             //dBackend.updateValue({"play": false});
             dBackend.monitorRef.update({"status": 3});
-            dBackend.monitorRef = null;
+            //dBackend.monitorRef = null;
             dBackend.disconnectCallback();
         };
         
