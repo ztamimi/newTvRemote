@@ -28,16 +28,19 @@ require(['modules/utilities', 'modules/backEnd', 'modules/tv', 'modules/ytplayer
     backEnd.listen();
     backEnd.setConnectCallback(onConnect);
     backEnd.setDisconnectCallback(onDisconnect);
+    $.mobile.changePage("#welcomePage", {transition: "fade", changeHash: false});
 
     
     
     function onConnect() {
         ytplayer.init();
         ytplayer.setPlayerLoadedCallback(init);
+        $.mobile.changePage("#tvPage", {transition: "fade", changeHash: false});
     };
     
     function onDisconnect() {
         ytplayer.cleanup();
+        $.mobile.changePage("#welcomePage", {transition: "fade", changeHash: false});
     };
     
     function init() {
