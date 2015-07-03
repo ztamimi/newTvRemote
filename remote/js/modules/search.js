@@ -3,7 +3,7 @@ define(["modules/list", "modules/ui", "jquery", "jquerymobile"], function(list, 
     var search = {};
     
     search.render = function() {
-        var pageItem = $("<div>", {'data-role': "panel", id: "searchPage", 'data-position': "right", 'data-display':"overlay", 'data-theme': 'b'});
+        var pageItem = $("<div>", {'data-role': "panel", id: "searchPage", 'data-position': 'right', 'data-position-fixed': 'true', 'data-display':"overlay", 'data-theme': 'b'});
         
         var toolbarDiv = $("<div>");
         var toolbarForm = $("<form>");
