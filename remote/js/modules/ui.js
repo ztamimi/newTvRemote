@@ -101,20 +101,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             var footerItem = ui.renderFooter();
             pageItem.append(footerItem);
 
-            /*
-            var a = document.getElementsByTagName("body")[0];
-            var b = a.childNodes;
-            
-            for(i=0; i< b.length; i++)
-                a.removeChild(b[i]);
-            */
-            $("body").css("background", "blue");
-            
             $("body").append(pageItem);
-        };
-        
-        ui.popVideo = function() {
-            //$("#popupVideo").popup("open");
         };
         
         ui.renderFooter = function() {
@@ -148,8 +135,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             tableItem.append(td1);
             
             var td2 = $("<td>", {style: "padding: 0px; margin: 0px"});
-            //var imgSrc = $("#logo").attr('src');
-            var logo = $("<img>", {style: "margin: 0 auto; height: 35px; float: right", src: "css/images/logo.png"});//.attr('src', imgSrc);
+            var logo = $("<img>", {style: "margin: 0 auto; height: 35px; float: right", src: "css/images/logo.png"});
             td2.append(logo);
             tableItem.append(td2);
             
@@ -198,6 +184,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
                 contentDiv.hide();
                 //$("#connectForm").collapsible("expand");
             }
+            ui.setPlayPause(false);
         };
         
 	ui.registerEvents = function() {
@@ -206,7 +193,6 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
                 ui.nextBtn.on('click', ui.clickNext);
                 
                 ui.volInput.on('change', ui.changeVolumeSlider);
-                //ui.speakerBtn.on('click', ui.clickSpeakerBtn);
                 
                 //// carousel events /////// 
                 ui.carousel.on("swiperight", ui.clickBack);
@@ -308,26 +294,14 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             }
             else {
                 ui.playPauseBtn.attr('data-play', "pause");
-                //var imgSrc = $("#playUri").attr('src');
-                ui.playPauseImg.attr('src', "css/images/play.png");//imgSrc);
+                ui.playPauseImg.attr('src', "css/images/play.png");
             }
         };
         
         ui.setVolume = function(volume) {            
             ui.volInput.val(volume).slider('refresh');
         };
-        /*
-        ui.setSpeaker = function(volume) {
-            if (volume > 0) {
-                ui.speakerBtn.attr('data-func', 'speaker');
-                ui.speakerImg.attr('src', 'css/speaker.png');
-            }
-            else {
-               ui.speakerBtn.attr('data-func', 'mute');
-               ui.speakerImg.attr('src', 'css/mute.png');
-            }
-        };
-        */
+        
         //////////// carousel functions ////////////////////
             
         ui.initCarousel = function() {
@@ -342,7 +316,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             var k = ui.imageWidth * ui.imageNum;
             $("#carousel").css({width: k});
             
-            var images = ui.list.children(); //$("#carousel").find("img[class='slideImg']").
+            var images = ui.list.children(); 
             
             images.css({width: ui.imageWidth});
             
@@ -354,7 +328,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             
         ui.addToCarousel = function(videoId) {
             var item = $("<li>", {'data-videoId': videoId});
-            var link = $("<a>", {href: '#'/*, 'data-role': 'button'*/});
+            var link = $("<a>", {href: '#'});
             var img = $("<img>", {class: "slideImg"});
             img.css({width: ui.imageWidth});
             link.append(img);

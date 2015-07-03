@@ -8,7 +8,7 @@ define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui'
     }
     dBackend.sessionId = id; 
     dBackend.setUrl('https://blazing-heat-3187.firebaseio.com/');
-    dBackend.setAppName('tvRemote');
+    dBackend.setAppName('tvRemoteTest');
     dBackend.setConnectCallback(onConnect);
     dBackend.setDisconnectCallback(onDisconnect);
     
@@ -20,6 +20,7 @@ define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui'
     function onDisconnect() {
         ui.enable(false);
         list.enable(false);
+        control.set();
     };
     ui.init();
     list.init();
@@ -36,12 +37,21 @@ define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui'
     control.setUiListCallback(list.updateListByControl);
     
     function onNewDevice() {
-        control.set();
+        control.reset();
     };
     
+    function onOldDevice() {
+        //control.set();
+    }
+    
     dBackend.setNewDeviceCallback(onNewDevice);
+    dBackend.setOldDeviceCallback(onOldDevice);
+
     dBackend.init(); 
     dBackend.setUpdateValueCallback(control.updateValueByBackEnd);
-    dBackend.setUpdateListCallback(control.updateListByBackEnd); 
+    dBackend.setUpdateListCallback(control.updateListByBackEnd);
+
+    //control.set();
+
     };
 });

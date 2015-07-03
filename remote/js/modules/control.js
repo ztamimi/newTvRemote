@@ -13,11 +13,15 @@ define(["modules/dBackend"], function(dBackend) {
         /// connect ///////////////
         
         control.set = function () {
+            //control.updateByUi('volume', 50);
+            control.updateByUi('play', false);
+            //control.updateByUi('index', 0);            
+        };
+        
+        control.reset = function () {
             control.updateByUi('volume', 50);
             control.updateByUi('play', false);
-            control.updateByUi('index', 0);
-            
-            //control.playList = [];
+            control.updateByUi('index', 0);            
         };
         
         control.addVideo = function(videoId) {

@@ -9,6 +9,7 @@ define(["firebase", "jquery", "jquerymobile"], function() {
             dBackend.ref.once('value', function(snapshot) {
                 if (snapshot.exists()) {
                     console.log("data exists");
+                    dBackend.oldDeviceCallback();
                 }
                 else {
                     dBackend.newDeviceCallback();
@@ -40,7 +41,9 @@ define(["firebase", "jquery", "jquerymobile"], function() {
             dBackend.newDeviceCallback = callback;
         };
 
-        
+        dBackend.setOldDeviceCallback = function(callback) {
+            dBackend.oldDeviceCallback = callback;
+        };
         //// connect //////////
         dBackend.clickConnect = function() {
             var monitorId = dBackend.monitorIdInput.val();
@@ -71,7 +74,8 @@ define(["firebase", "jquery", "jquerymobile"], function() {
             if (key === 'status' && value === 2) {
                 dBackend.flip(2);
                 dBackend.connectCallback();
-                dBackend.monitorRef.onDisconnect().update({"status": 3});
+                dBackend.monitorRef.onDisconnect().update({"connectTo": 0});
+                dBackend.monitorRef.onDisconnect().update({"status": 0});
                 dBackend.connectError(0);
                 return;
             }
@@ -112,8 +116,8 @@ define(["firebase", "jquery", "jquerymobile"], function() {
         dBackend.clickDisconnect = function() {
             dBackend.connectError(3);
             dBackend.flip(1);
-            //dBackend.updateValue({"play": false});
-            dBackend.monitorRef.update({"status": 3});
+            dBackend.monitorRef.update({"connectTo": 0});
+            dBackend.monitorRef.update({"status": 0});
             //dBackend.monitorRef = null;
             dBackend.disconnectCallback();
         };
