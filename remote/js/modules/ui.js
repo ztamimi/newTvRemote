@@ -144,8 +144,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             return divItem;
         };
         
-	ui.init = function() {
-            
+		ui.init = function() {    
             ui.render();
             
             console.log("ui.init");
@@ -178,16 +177,16 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             var contentDiv = $("#remoteDiv"); //$("#remotePage['data-role'='content']");
             if (value) {
                 contentDiv.show();
-                //$("#connectForm").collapsible("collapse");
+                $("#connectForm").collapsible("collapse");
             }
             else {
                 contentDiv.hide();
-                //$("#connectForm").collapsible("expand");
+                $("#connectForm").collapsible("expand");
             }
             ui.setPlayPause(false);
         };
         
-	ui.registerEvents = function() {
+		ui.registerEvents = function() {
                 ui.playPauseBtn.on('click', ui.clickPlayPauseBtn);
                 ui.backBtn.on('click', ui.clickBack);
                 ui.nextBtn.on('click', ui.clickNext);
@@ -226,6 +225,10 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
         };
         
         ui.clickPlayPauseBtn = function() {
+			if (!control.videoId)
+				return;
+			//$.mobile.loading('show');
+
             if (ui.playPauseBtn.attr('data-play') === "play") {
                 ui.setPlayPause(false);
                 control.updateByUi("play", false);
@@ -243,7 +246,6 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
         };
         
         ui.clickAudioBtn = function() {
-            
             var volume = parseInt(ui.volInput.val());
             if (volume > 0) {
                 ui.volumeLog = volume;
@@ -259,7 +261,6 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
         };
         
         ui.updateValueByControl = function(key, value) {
-            
             console.log("ui.updateValueByControl called " + key + ":" + value);
             
             switch(key) {
@@ -375,6 +376,8 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
         };
             
         ui.clickItem = function() {
+			$.mobile.loading('show');
+
             var listItem = $(this).parent("li");
             
             ui.list.find("li").css("background", "none");

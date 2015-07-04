@@ -14,14 +14,22 @@ define(["modules/dBackend"], function(dBackend) {
         
         control.set = function () {
             //control.updateByUi('volume', 50);
-            control.updateByUi('play', false);
+            //control.updateByUi('play', false);
+            dBackend.updateValue({'play': 'false'});
+
             //control.updateByUi('index', 0);            
         };
         
         control.reset = function () {
-            control.updateByUi('volume', 50);
-            control.updateByUi('play', false);
-            control.updateByUi('index', 0);            
+            //control.updateByUi('volume', 50);
+            dBackend.updateValue({'volume': 50});
+			dBackend.updateValue({'play': 'false'});
+            //dBackend.updateValue({'index': '0'});
+            dBackend.updateValue({'videoId': 0});
+
+
+            //control.updateByUi('play', false);
+            //control.updateByUi('index', 0);            
         };
         
         control.addVideo = function(videoId) {
@@ -47,7 +55,7 @@ define(["modules/dBackend"], function(dBackend) {
         
         control.updateByUi = function(key, value) {
             console.log("control.updateByUi called " + key + ":" + value);
-            
+			$.mobile.loading('show');
             if (control[key] === value)
                 return;
             
@@ -64,14 +72,15 @@ define(["modules/dBackend"], function(dBackend) {
                 return;
             
             control.updateByUi("videoId", videoId);
-            control.updateByUi("play", true);
-
+            //control.updateByUi("play", true);
         };
         
         control.updateValueByBackEnd = function(key, value) {
             console.log(key + ":" + value);
-            if (control[key] === value)
+            if (control[key] === value) {
+				$.mobile.loading('hide');
                 return;
+			}
             
             control[key] = value;
             control.uiValueCallback(key, value);
@@ -79,7 +88,7 @@ define(["modules/dBackend"], function(dBackend) {
         };
     
         control.updateListByBackEnd = function(task, key, value) {
-            //console.log("control.updateListByBackEnd: "+ task + ":" + videoId);
+            //console.log("control.updateListByBackEnd: "+ task + ":"+ videoId);
             var videoId = key;
             if (task === 'add') {
                 if (control.playList.indexOf(videoId) >= 0) // video does exist in list
@@ -87,7 +96,7 @@ define(["modules/dBackend"], function(dBackend) {
                 control.playList.push(videoId);
                 control.uiListCallback("add", videoId);
             }
-                
+            
             if (task === 'delete') {
                 var index = control.playList.indexOf(videoId);
                 if (index < 0)  // video does not exist in list

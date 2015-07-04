@@ -96,6 +96,8 @@ define(["modules/control", "modules/ui", "jquery", "jquerymobile"], function(con
         };
         
         list.clickItem = function() {
+			$.mobile.loading('show');
+
             var listItem = $(this).parent("li");
             
             $("#videoList li").find("a").css("background-color", "");
@@ -222,6 +224,8 @@ define(["modules/control", "modules/ui", "jquery", "jquerymobile"], function(con
         };
         
         list.getVideoInfo = function (videoId, title, thumb, slideImg) {
+			$.mobile.loading('show');
+
             $.getJSON("https://www.googleapis.com/youtube/v3/videos", {
 					key: "AIzaSyBceX56re-t1h1JlKgOoAVa3w8S3pxmAX0",
 					part: "snippet",
@@ -233,6 +237,8 @@ define(["modules/control", "modules/ui", "jquery", "jquerymobile"], function(con
                                     title.text(data.items[0].snippet.title);
                                     thumb.attr("src", data.items[0].snippet.thumbnails.default.url);
                                     slideImg.attr("src", data.items[0].snippet.thumbnails.default.url);
+                                    $.mobile.loading('hide');
+
                     }); 
                                 
         };    

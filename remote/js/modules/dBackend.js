@@ -69,6 +69,8 @@ define(["firebase", "jquery", "jquerymobile"], function() {
         };
         
         dBackend.onStatusChange = function(snapshot) {
+			$.mobile.loading('hide');
+
             var value = snapshot.val();
             var key = snapshot.key();
             if (key === 'status' && value === 2) {
@@ -114,6 +116,8 @@ define(["firebase", "jquery", "jquerymobile"], function() {
         };
         
         dBackend.clickDisconnect = function() {
+			$.mobile.loading('show');
+
             dBackend.connectError(3);
             dBackend.flip(1);
             dBackend.monitorRef.update({"connectTo": 0});

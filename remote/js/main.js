@@ -22,14 +22,15 @@ define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui'
         list.enable(false);
         control.set();
     };
-    ui.init();
     list.init();
+    ui.init();
+
     ui.setUpdateByUiCallback(list.updateByUi);
     
     search.init();
     list.setSearchPtr(search);
     
-    ui.slide();
+    //ui.slide();
     
     control.init();
     control.setUiValueCallback(ui.updateValueByControl);

@@ -113,6 +113,8 @@ define(["modules/list", "modules/ui", "jquery", "jquerymobile"], function(list, 
     };
     
     search.search = function (keyword) {
+			$.mobile.loading('show');
+
             $.getJSON("https://www.googleapis.com/youtube/v3/search", {
 					key: "AIzaSyBceX56re-t1h1JlKgOoAVa3w8S3pxmAX0",
 					part: "id,snippet",
@@ -144,6 +146,7 @@ define(["modules/list", "modules/ui", "jquery", "jquerymobile"], function(list, 
                                         
                                         search.list.append(item);                                        
                                     }
+                                    $.mobile.loading('hide');
                                     search.list.listview("refresh");
                     });                                 
     };
