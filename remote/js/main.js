@@ -1,4 +1,4 @@
-define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui', 'modules/list', 'modules/search'], function(utilities, dBackend, control, ui, list, search) {
+define(['modules/utilities', 'modules/dBackend', 'modules/control', "jquery", "jquerymobile", 'modules/list', 'modules/ui', 'modules/search'], function(utilities, dBackend, control, jquery, jquerymobile, list, ui, search) {
     
     return function() {
     var id = utilities.getCookie("deviceId");
@@ -30,8 +30,8 @@ define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui'
     search.init();
     list.setSearchPtr(search);
     
-    //ui.slide();
-    
+    $.mobile.changePage("#playListPage", {transition: "slide", changeHash: false, reverse: "true"});
+        
     control.init();
     control.setUiValueCallback(ui.updateValueByControl);
     control.setUiValueCallback2(list.updateValueByControl);
@@ -42,7 +42,6 @@ define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui'
     };
     
     function onOldDevice() {
-        //control.set();
     }
     
     dBackend.setNewDeviceCallback(onNewDevice);
@@ -51,8 +50,5 @@ define(['modules/utilities', 'modules/dBackend', 'modules/control', 'modules/ui'
     dBackend.init(); 
     dBackend.setUpdateValueCallback(control.updateValueByBackEnd);
     dBackend.setUpdateListCallback(control.updateListByBackEnd);
-
-    //control.set();
-
     };
 });
