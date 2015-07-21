@@ -2,16 +2,16 @@ require.config({
     baseUrl: 'js',
     
     paths: {
-        "firebase": "http://cdn.firebase.com/js/client/2.2.2/firebase",
-        "jquery": "http://code.jquery.com/jquery-1.11.1.min",
-        "jqueryMobile": "http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min"
+        "firebase": ["http://cdn.firebase.com/js/client/2.2.2/firebase", "lib/firebase"],
+        "jquery": ["http://code.jquery.com/jquery-1.11.1.min", "lib/jquery"],
+        "jqueryMobile": ["http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min", "lib/jquerymobile"]
     }
 });
 
-requirejs(["jquery"]);
-requirejs(["jqueryMobile"]);
+//requirejs(["jquery"]);
+//requirejs(["jqueryMobile"]);
 
-require(['modules/utilities', 'modules/backEnd', 'modules/tv', 'modules/ytplayer'], function(utilities, backEnd, tv, ytplayer) {
+require(['modules/utilities', 'modules/backEnd', 'jquery', 'jqueryMobile', 'modules/tv', 'modules/ytplayer'], function(utilities, backEnd, jquery, jquerymobile, tv, ytplayer) {
    
     backEnd.setUrl('https://blazing-heat-3187.firebaseio.com/');
     backEnd.setAppName('tvRemoteTest');
@@ -28,7 +28,9 @@ require(['modules/utilities', 'modules/backEnd', 'modules/tv', 'modules/ytplayer
     backEnd.listen();
     backEnd.setConnectCallback(onConnect);
     backEnd.setDisconnectCallback(onDisconnect);
+    //$.mobile.changePage("#welcomePage", {transition: "fade", changeHash: false});
     $.mobile.changePage("#welcomePage", {transition: "fade", changeHash: false});
+
 
     
     
