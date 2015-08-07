@@ -314,10 +314,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="465.70022"
-     inkscape:cy="-155.46773"
+     inkscape:cx="289.20022"
+     inkscape:cy="-275.46773"
      inkscape:document-units="px"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-smooth-nodes="true"
      inkscape:snap-bbox="true"
@@ -334,8 +334,8 @@
      inkscape:snap-to-guides="false"
      inkscape:window-width="745"
      inkscape:window-height="421"
-     inkscape:window-x="1556"
-     inkscape:window-y="70"
+     inkscape:window-x="2217"
+     inkscape:window-y="55"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -351,33 +351,18 @@
   </metadata>
   <g
      inkscape:groupmode="layer"
-     id="layer6"
-     inkscape:label="5">
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:url(#radialGradient6477);stroke-width:10.76418304;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 119.72251,109.20871 c 7.07235,-9.866327 27.9068,-8.58738 27.9068,-8.58738 l 36.85626,-0.15111 35.39083,0 c 0,0 19.53554,-0.33023 26.47419,9.32106 6.93864,9.65128 6.28239,27.01012 6.28239,27.01012 l 0,34.0801 0,36.4104 c 0,0 0.17689,13.23336 -6.7012,22.80046 -6.87814,9.56711 -28.35894,9.61233 -28.35894,9.61233 l -32.66845,0 -37.69438,0 c 0,0 -20.52736,-0.80494 -27.2781,-10.19488 -6.75075,-9.38996 -6.4918,-22.50923 -6.4918,-22.50923 l 0,-38.15803 0,-32.04115 c 0,0 -0.78997,-17.72635 6.2824,-27.59269 z"
-       id="rect4176"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="zccczccczccczcccz"
-       inkscape:export-filename="/home/zakiya/projects/newTvRemote/androidRemote/logo/g6443.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer7"
-     inkscape:label="6">
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
-       x="655.13446"
-       y="322.62799"
-       id="text6006"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan6008"
-         x="655.13446"
-         y="322.62799" /></text>
+     id="layer1"
+     inkscape:label="0">
+    <rect
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-opacity:1"
+       id="rect3085"
+       width="170"
+       height="170"
+       x="113.60098"
+       y="1190.0015"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo11.png"
+       inkscape:export-xdpi="89.736053"
+       inkscape:export-ydpi="89.736053" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -673,19 +658,49 @@
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
-       style="fill:#000000;fill-opacity:1;stroke:none"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        d="m 212.06408,1190.6871 c -0.46244,0 -0.8215,0.1537 -1,0.5 -3.67332,7.1288 -6.89482,14.222 -9.8125,22.4062 -1.37058,-0.3095 -2.78012,-0.5196 -4.21875,-0.5 -1.15389,0.016 -2.29312,0.1733 -3.375,0.375 0,0 -5.92655,-14.9638 -9.78125,-21.1874 -1.17863,-1.903 -5.06392,-0.3293 -4.53125,1.1562 2.35179,6.5591 8.10578,22.5 8.03125,22.5 -3.69746,2.3405 -6.11147,5.9088 -6.28125,9.9688 -6.45361,0.7862 -12.3627,2.688 -15.84375,7.0937 -7.25307,9.1793 -5.31937,18.8908 -5.5625,32.6563 -0.24311,13.7655 -1.7327,29.6875 6.28125,38.7812 8.01394,9.0936 21.01257,7.6235 31.9375,7.625 11.6606,0 27.76349,0.3566 34.84375,-7.9688 7.08026,-8.3252 5.02165,-21.4567 5.15625,-34.1562 0.13459,-12.6993 2.37435,-26.2514 -5.5,-36.5938 -4.95321,-6.5056 -11.46852,-7.9735 -18.40625,-8.1562 -0.68514,-3.5 -3.13342,-6.7681 -6.53125,-9 0,0 5.16487,-14.8341 7.78125,-23.0938 0.361,-1.1396 -1.8002,-2.427 -3.1875,-2.4062 z m -5.71875,44.6875 c 6.22284,-0.1287 12.25476,0.2196 16.625,4.8437 5.82699,6.1656 4.16211,14.2732 4.0625,21.8438 -0.0998,7.5706 1.42687,15.3807 -3.8125,20.3438 -5.2394,4.963 -17.15242,4.7824 -25.78125,4.7812 -8.08444,-8e-4 -17.72595,0.8586 -23.65625,-4.5625 -5.93032,-5.4211 -4.80491,-14.9187 -4.625,-23.125 0.17987,-8.2062 -1.27352,-13.9965 4.09375,-19.4687 5.36725,-5.4721 18.58698,-4.441 26.84375,-4.5 2.06419,-0.015 4.17572,-0.1134 6.25,-0.1563 z m -24.28125,57.9375 c 0.0544,0 0.1331,-9e-4 0.1875,0 l 33.71875,0 0.1875,0 c 3.1994,0.079 5.73915,2.8332 5.65625,6.1875 -0.0829,3.3542 -2.76934,6.0477 -5.96875,5.9687 l 0,-0.1562 -33.46875,0 0,0.125 c -3.1994,0.079 -5.82335,-2.5833 -5.90625,-5.9375 -0.0829,-3.3542 2.39434,-6.1085 5.59375,-6.1875 z m 0.1875,2.875 c -1.93947,0 -3.5,1.5684 -3.5,3.5 0,1.9316 1.56053,3.5 3.5,3.5 1.93947,0 3.53125,-1.5684 3.53125,-3.5 0,-1.9316 -1.59178,-3.5 -3.53125,-3.5 z m 33.71875,0 c -1.49744,0 -2.71875,1.1962 -2.71875,2.6875 0,1.4913 1.22131,2.7187 2.71875,2.7187 1.49744,10e-5 2.71875,-1.2274 2.71875,-2.7187 0,-1.4913 -1.22131,-2.6875 -2.71875,-2.6875 z m -22.9375,0.5 c -1.49744,0 -2.71875,1.2274 -2.71875,2.7188 0,1.4913 1.22131,2.6874 2.71875,2.6874 1.49744,0 2.71875,-1.1961 2.71875,-2.6874 0,-1.4914 -1.22131,-2.7188 -2.71875,-2.7188 z m 6.09375,0 c -1.49744,0 -2.6875,1.2274 -2.6875,2.7188 0,1.4913 1.19006,2.6874 2.6875,2.6874 1.49744,0 2.71875,-1.1961 2.71875,-2.6874 0,-1.4914 -1.22131,-2.7188 -2.71875,-2.7188 z"
        id="rect3924-7-9-5-8"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo10.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo11.png"
+       inkscape:export-xdpi="89.736053"
+       inkscape:export-ydpi="89.736053" />
     <path
        inkscape:connector-curvature="0"
-       style="fill:#000000;fill-opacity:1;stroke:none"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        d="m 174.83556,1316.871 0,7.5411 9.20194,0 -15.08219,36.0446 10.32412,-0.1795 14.18444,-35.8651 14.22934,0 14.18444,35.8651 10.36901,0.2243 -15.0822,-36.0894 8.48374,0 0,-7.5411 -50.81264,0 z"
        id="rect4098-4-8-1-1"
-       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo10.png"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo11.png"
+       inkscape:export-xdpi="89.736053"
+       inkscape:export-ydpi="89.736053" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="6">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="655.13446"
+       y="322.62799"
+       id="text6006"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6008"
+         x="655.13446"
+         y="322.62799" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="5">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:url(#radialGradient6477);stroke-width:10.76418304;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 119.72251,109.20871 c 7.07235,-9.866327 27.9068,-8.58738 27.9068,-8.58738 l 36.85626,-0.15111 35.39083,0 c 0,0 19.53554,-0.33023 26.47419,9.32106 6.93864,9.65128 6.28239,27.01012 6.28239,27.01012 l 0,34.0801 0,36.4104 c 0,0 0.17689,13.23336 -6.7012,22.80046 -6.87814,9.56711 -28.35894,9.61233 -28.35894,9.61233 l -32.66845,0 -37.69438,0 c 0,0 -20.52736,-0.80494 -27.2781,-10.19488 -6.75075,-9.38996 -6.4918,-22.50923 -6.4918,-22.50923 l 0,-38.15803 0,-32.04115 c 0,0 -0.78997,-17.72635 6.2824,-27.59269 z"
+       id="rect4176"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zccczccczccczcccz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/androidRemote/logo/g6443.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
   </g>
