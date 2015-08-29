@@ -1,0 +1,24 @@
+Hello Guys,
+
+We would like to present our latest product called MoboRemote which is a mobile app that allows users to search youtube, add videos to their playlist, and later can connect to a TV or PC to watch videos on a big screen while controlling play, pause, volume, etc.
+
+Here are links to our site and our listing on google play. 
+
+Motivation:
+
+
+
+Features: 
+- Child-safe: only videos on a playlist will be shown and played. This is good as sometimes youtube recommendations can be off and some material can be inappropriate for children and teens.
+
+- Privacy: users playlist is on their mobile and not of the tv. After users and done watching their playlist on a tv they can disconnect, keeping their watching experience private. youtube on the other hand, remembers user activity and future recommendations are made based on it; which is sometimes undesirable.
+
+- simplicity: while users do have accounts, they don't have to create accounts, login, or provide identifying information. 
+
+- user information privacy: we don't store identifying information and don't share users activity on social networks. youtube in many cases share users activtiy, likes, etc with their connections on google+. Sometimes this is not desirable. We believe sharing someones preferences should be optional and not by default.
+
+- data access: our application does not access users mobile data, phone book, calls, etc. Only wifi connection is required.
+
+Design Descions:
+- Independent of hardware, the screen side is not limited to smart tv. any device with internet connection and modern web-browser can do.
+- 

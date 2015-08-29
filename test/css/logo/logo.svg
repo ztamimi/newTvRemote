@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/zakiya/projects/newTvRemote/androidRemote/logo/logo.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient6469">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6471" />
+      <stop
+         id="stop6479"
+         offset="0.5"
+         style="stop-color:#000000;stop-opacity:0.49803922;" />
+      <stop
+         style="stop-color:#c8c8c8;stop-opacity:1;"
+         offset="1"
+         id="stop6473" />
+    </linearGradient>
+    <linearGradient
+       osb:paint="gradient"
+       id="linearGradient6299">
+      <stop
+         id="stop6301"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.67808219"
+         offset="0.3321552"
+         id="stop6305" />
+      <stop
+         id="stop6303"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6099"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop6101" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop6103" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6073">
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:1;"
+         offset="0"
+         id="stop6075" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:0;"
+         offset="1"
+         id="stop6077" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6035"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:1;"
+         offset="0"
+         id="stop6037" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:0;"
+         offset="1"
+         id="stop6039" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5956">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop5958" />
+      <stop
+         id="stop6097"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:0.99215686;" />
+      <stop
+         id="stop6095"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:0.98431373;" />
+      <stop
+         id="stop6093"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:0.96862745;" />
+      <stop
+         id="stop6091"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:0.9372549;" />
+      <stop
+         id="stop5966"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:0.8745098;" />
+      <stop
+         id="stop5964"
+         offset="0.23394963"
+         style="stop-color:#c1c1c1;stop-opacity:0.74901961;" />
+      <stop
+         id="stop5962"
+         offset="0.39518216"
+         style="stop-color:#c1c1c1;stop-opacity:0.49803922;" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:0.24705882;"
+         offset="0.66498399"
+         id="stop6089" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:0;"
+         offset="1"
+         id="stop5960" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5832">
+      <stop
+         id="stop5834"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:1;" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:1;"
+         offset="0.43396392"
+         id="stop6071" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:1;"
+         offset="0.5"
+         id="stop6069" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:1;"
+         offset="0.5"
+         id="stop6067" />
+      <stop
+         id="stop5836"
+         offset="1"
+         style="stop-color:#c1c1c1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5816">
+      <stop
+         id="stop5838"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:1;" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:1"
+         offset="1"
+         id="stop5820" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5794">
+      <stop
+         id="stop5802"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:0.49803922;" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:0;"
+         offset="1"
+         id="stop5798" />
+    </linearGradient>
+    <linearGradient
+       osb:paint="gradient"
+       id="linearGradient5758">
+      <stop
+         id="stop5760"
+         offset="0"
+         style="stop-color:#c1c1c1;stop-opacity:1;" />
+      <stop
+         id="stop5762"
+         offset="1"
+         style="stop-color:#c1c1c1;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient5746"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:1;"
+         offset="0"
+         id="stop5748" />
+      <stop
+         style="stop-color:#c1c1c1;stop-opacity:0;"
+         offset="1"
+         id="stop5750" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4208"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4210" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4202"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4204" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4196"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4198" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4188"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4190" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4192" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect3889"
+       is_visible="true"
+       pattern="M 0,0 1,0"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3887"
+       is_visible="true" />
+    <marker
+       markerWidth="56.5"
+       markerHeight="60"
+       orient="auto"
+       id="marker3897">
+      <rect
+         ry="0.25"
+         y="-29.5"
+         x="-27.75"
+         height="59"
+         width="55.5"
+         id="rect3895"
+         style="opacity:0.37000002;fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </marker>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6469"
+       id="radialGradient6477"
+       cx="710.86572"
+       cy="314.00421"
+       fx="710.86572"
+       fy="314.00421"
+       r="67.175514"
+       gradientTransform="matrix(1.2462923,-0.01928967,0.02078085,1.3426351,-709.44007,-237.79391)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6469-6"
+       id="radialGradient6477-1"
+       cx="710.86572"
+       cy="314.00421"
+       fx="710.86572"
+       fy="314.00421"
+       r="67.175514"
+       gradientTransform="matrix(1.2462923,-0.01928967,0.02078085,1.3426351,-531.24916,-251.93605)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient6469-6">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6471-2" />
+      <stop
+         id="stop6479-1"
+         offset="0.5"
+         style="stop-color:#000000;stop-opacity:0.49803922;" />
+      <stop
+         style="stop-color:#c8c8c8;stop-opacity:1;"
+         offset="1"
+         id="stop6473-6" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="465.70022"
+     inkscape:cy="-155.46773"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer4"
+     showgrid="false"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:snap-global="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-nodes="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-to-guides="false"
+     inkscape:window-width="745"
+     inkscape:window-height="421"
+     inkscape:window-x="1556"
+     inkscape:window-y="70"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="5">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:url(#radialGradient6477);stroke-width:10.76418304;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 119.72251,109.20871 c 7.07235,-9.866327 27.9068,-8.58738 27.9068,-8.58738 l 36.85626,-0.15111 35.39083,0 c 0,0 19.53554,-0.33023 26.47419,9.32106 6.93864,9.65128 6.28239,27.01012 6.28239,27.01012 l 0,34.0801 0,36.4104 c 0,0 0.17689,13.23336 -6.7012,22.80046 -6.87814,9.56711 -28.35894,9.61233 -28.35894,9.61233 l -32.66845,0 -37.69438,0 c 0,0 -20.52736,-0.80494 -27.2781,-10.19488 -6.75075,-9.38996 -6.4918,-22.50923 -6.4918,-22.50923 l 0,-38.15803 0,-32.04115 c 0,0 -0.78997,-17.72635 6.2824,-27.59269 z"
+       id="rect4176"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zccczccczccczcccz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/androidRemote/logo/g6443.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="6">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="655.13446"
+       y="322.62799"
+       id="text6006"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6008"
+         x="655.13446"
+         y="322.62799" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="3">
+    <g
+       id="g6443"
+       transform="translate(-527.15851,-142.31177)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         id="rect3924"
+         d="m 720.05695,255.00437 c -0.32194,0.005 -0.56323,0.10259 -0.6875,0.34375 -2.55731,4.96288 -4.8125,9.89583 -6.84375,15.59375 -0.95418,-0.21552 -1.93595,-0.35747 -2.9375,-0.34375 -0.80332,0.011 -1.59056,0.10951 -2.34375,0.25 0,0 -4.12892,-10.41716 -6.8125,-14.75 -0.82055,-1.32484 -3.52708,-0.22173 -3.15625,0.8125 1.63728,4.56635 5.64563,15.65625 5.59375,15.65625 -2.57413,1.62938 -4.2568,4.11109 -4.375,6.9375 -4.49291,0.54738 -8.60778,1.87037 -11.03125,4.9375 -5.04947,6.39058 -3.70574,13.16658 -3.875,22.75 -0.16925,9.58341 -1.20419,20.66913 4.375,27 5.57919,6.33087 14.64422,5.3115 22.25,5.3125 8.11794,0.001 19.32083,0.23345 24.25,-5.5625 4.92917,-5.79595 3.50005,-14.9401 3.59375,-23.78125 0.0937,-8.84116 1.63825,-18.26853 -3.84375,-25.46875 -3.44835,-4.52917 -7.98256,-5.56027 -12.8125,-5.6875 -0.47699,-2.43656 -2.16573,-4.69615 -4.53125,-6.25 0,0 3.58477,-10.34347 5.40625,-16.09375 0.25133,-0.79342 -1.25293,-1.67071 -2.21875,-1.65625 z"
+         style="fill:#c8c8c8;fill-opacity:1;stroke:none"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4011"
+         d="m 699.18195,326.44187 c -2.22738,0.0551 -3.96399,1.97735 -3.90625,4.3125 0.0577,2.33515 1.89762,4.18008 4.125,4.125 l 0,-0.0937 23.28125,0 0,0.125 c 2.22738,0.0551 4.09851,-1.8211 4.15625,-4.15625 0.0577,-2.33515 -1.71012,-4.25742 -3.9375,-4.3125 l -0.125,0 -23.46875,0 c -0.0379,-5.8e-4 -0.0871,-9.4e-4 -0.125,0 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.04109585;stroke-miterlimit:4;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         transform="matrix(0.46464258,0,0,0.48513677,594.21491,194.30777)"
+         d="m 280.75,280.36218 c 0,2.14011 -1.81884,3.875 -4.0625,3.875 -2.24366,0 -4.0625,-1.73489 -4.0625,-3.875 0,-2.1401 1.81884,-3.875 4.0625,-3.875 2.24366,0 4.0625,1.7349 4.0625,3.875 z"
+         sodipodi:ry="3.875"
+         sodipodi:rx="4.0625"
+         sodipodi:cy="280.36218"
+         sodipodi:cx="276.6875"
+         id="path4011-7"
+         style="fill:#c8c8c8;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(0.46464258,0,0,0.48513677,582.49614,194.66254)"
+         d="m 280.75,280.36218 c 0,2.14011 -1.81884,3.875 -4.0625,3.875 -2.24366,0 -4.0625,-1.73489 -4.0625,-3.875 0,-2.1401 1.81884,-3.875 4.0625,-3.875 2.24366,0 4.0625,1.7349 4.0625,3.875 z"
+         sodipodi:ry="3.875"
+         sodipodi:rx="4.0625"
+         sodipodi:cy="280.36218"
+         sodipodi:cx="276.6875"
+         id="path4011-7-6"
+         style="fill:#c8c8c8;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(0.46464258,0,0,0.48513677,578.24614,194.66254)"
+         d="m 280.75,280.36218 c 0,2.14011 -1.81884,3.875 -4.0625,3.875 -2.24366,0 -4.0625,-1.73489 -4.0625,-3.875 0,-2.1401 1.81884,-3.875 4.0625,-3.875 2.24366,0 4.0625,1.7349 4.0625,3.875 z"
+         sodipodi:ry="3.875"
+         sodipodi:rx="4.0625"
+         sodipodi:cy="280.36218"
+         sodipodi:cx="276.6875"
+         id="path4011-7-0"
+         style="fill:#c8c8c8;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(0.60179951,0,0,0.62834334,532.79655,154.71299)"
+         d="m 280.75,280.36218 c 0,2.14011 -1.81884,3.875 -4.0625,3.875 -2.24366,0 -4.0625,-1.73489 -4.0625,-3.875 0,-2.1401 1.81884,-3.875 4.0625,-3.875 2.24366,0 4.0625,1.7349 4.0625,3.875 z"
+         sodipodi:ry="3.875"
+         sodipodi:rx="4.0625"
+         sodipodi:cy="280.36218"
+         sodipodi:cx="276.6875"
+         id="path4011-7-2"
+         style="fill:#c8c8c8;fill-opacity:1;stroke:none"
+         sodipodi:type="arc" />
+      <path
+         id="rect4098"
+         d="m 693.4632,342.06687 0,5.25 6.40625,0 -10.5,25.09375 7.1875,-0.125 9.875,-24.96875 9.90625,0 9.875,24.96875 7.21875,0.15625 -10.5,-25.125 5.90625,0 0,-5.25 -35.375,0 z"
+         style="fill:#c8c8c8;fill-opacity:1;stroke:none"
+         inkscape:connector-curvature="0" />
+      <path
+         sodipodi:nodetypes="zzzzzszzz"
+         inkscape:connector-curvature="0"
+         id="rect3924-9"
+         d="m 693.04636,289.33792 c 3.7366,-3.80967 12.93675,-3.08867 18.68499,-3.12974 5.74824,-0.041 11.85333,-1.01356 15.90999,3.27878 4.05666,4.29234 2.90373,9.92931 2.83438,15.19988 -0.0695,5.27057 0.99819,10.70485 -2.64938,14.16005 -3.64759,3.45519 -11.94365,3.33294 -17.95091,3.33207 -5.62827,-6e-4 -12.33048,0.59105 -16.45906,-3.18305 -4.12861,-3.77408 -3.36491,-10.38107 -3.23966,-16.09412 0.12522,-5.71306 -0.86696,-9.75417 2.86965,-13.56387 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.6641863;stroke-miterlimit:4;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 162.88205,399.94088 c 26.00656,-36.28064 102.61929,-31.57765 102.61929,-31.57765 l 135.52838,-0.55564 130.13967,0 c 0,0 71.83639,-1.21433 97.35128,34.2755 25.51488,35.48984 23.1017,99.32205 23.1017,99.32205 l 0,125.31984 0,133.88886 c 0,0 0.65046,48.66193 -24.64175,83.8422 -25.29239,35.18031 -104.28191,35.34661 -104.28191,35.34661 l -120.12889,0 -138.61033,0 c 0,0 -75.48352,-2.95993 -100.30742,-37.48878 -24.82395,-34.52889 -23.87175,-82.77125 -23.87175,-82.77125 l 0,-140.31531 0,-117.82217 c 0,0 -2.90488,-65.18363 23.10173,-101.46426 z"
+       id="rect4176-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zccczccczccczcccz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 431.96566,412.7519 c -1.18384,0.0185 -2.07113,0.37723 -2.52809,1.26403 -9.40377,18.24958 -17.69659,36.38909 -25.16593,57.34158 -3.50873,-0.79252 -7.11891,-1.3145 -10.80182,-1.26406 -2.954,0.0403 -5.84883,0.40271 -8.61847,0.91929 0,0 -15.18294,-38.30613 -25.05104,-54.2389 -3.01733,-4.87172 -12.96982,-0.81536 -11.60621,2.98773 6.02063,16.79148 20.7602,57.57138 20.56942,57.57138 -9.46562,5.99161 -15.65316,15.1174 -16.08781,25.51069 -16.52139,2.01286 -31.65264,6.87777 -40.56428,18.15624 -18.56797,23.49959 -13.62679,48.41635 -14.24919,83.65664 -0.62237,35.24026 -4.42807,76.00487 16.0878,99.28481 20.51589,23.27998 53.84994,19.53155 81.81803,19.53521 29.8514,0.004 71.04683,0.85847 89.17246,-20.45452 18.12561,-21.31293 12.87043,-54.93794 13.21497,-87.44873 0.34456,-32.51087 6.02421,-67.17733 -14.13428,-93.65407 -12.68032,-16.65474 -29.35358,-20.44634 -47.11431,-20.91418 -1.754,-8.95975 -7.96386,-17.26874 -16.66238,-22.98257 0,0 13.18196,-38.03519 19.87994,-59.18019 0.9242,-2.91759 -4.60729,-6.14355 -8.15881,-6.09038 z"
+       id="rect3924-7"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.82833314;stroke-miterlimit:4;stroke-opacity:1"
+       d="m 355.20379,675.44295 c -8.19055,0.20264 -14.57643,7.27112 -14.36411,15.85796 0.21217,8.58687 6.97795,15.37108 15.16851,15.16853 l 0,-0.34465 85.61016,0 0,0.45963 c 8.19055,0.20265 15.07109,-6.69657 15.28342,-15.28344 0.21216,-8.58683 -6.28848,-15.65542 -14.47905,-15.85796 l -0.45965,0 -86.29962,0 c -0.13937,-0.002 -0.32029,-0.003 -0.45966,0 z"
+       id="path4011-2"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-61"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(1.7085905,0,0,1.7839522,-30.78252,189.55742)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-6-6"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(1.7085905,0,0,1.7839522,-73.874947,190.86199)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-0-5"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(1.7085905,0,0,1.7839522,-89.503118,190.86199)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-2-2"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(2.2129459,0,0,2.3105536,-256.63101,43.95891)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 334.17473,732.89944 0,19.30537 23.55715,0 -38.61075,92.27509 26.42998,-0.45964 36.3125,-91.81545 36.42741,0 36.31249,91.81545 26.54489,0.57457 -38.61077,-92.39002 21.71856,0 0,-19.30537 -130.08146,0 z"
+       id="rect4098-4"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.44235587;stroke-miterlimit:4;stroke-opacity:1"
+       d="m 332.64191,539.00372 c 13.74029,-14.00897 47.57121,-11.35772 68.70873,-11.50871 21.13752,-0.15088 43.58723,-3.72709 58.50446,12.05677 14.91719,15.78386 10.67762,36.5122 10.4226,55.89323 -0.25555,19.381 3.67057,39.36404 -9.74234,52.06957 -13.41297,12.70546 -43.91935,12.25589 -66.00934,12.25271 -20.69636,-0.002 -45.34182,2.17343 -60.52349,-11.70474 -15.1818,-13.87813 -12.37351,-38.17344 -11.91294,-59.18155 0.46047,-21.00814 -3.188,-35.86818 10.55232,-49.87728 z"
+       id="rect3924-9-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zzzzzszzz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo5.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 465.47527,115.32373 c 7.0724,-9.86633 27.9068,-8.58738 27.9068,-8.58738 l 36.8563,-0.15111 35.3908,0 c 0,0 19.5356,-0.33023 26.4742,9.32106 6.9387,9.65127 6.2824,27.01011 6.2824,27.01011 l 0,34.0801 0,36.41039 c 0,0 0.1769,13.23336 -6.7012,22.80046 -6.8781,9.56711 -28.3589,9.61233 -28.3589,9.61233 l -32.6685,0 -37.6944,0 c 0,0 -20.5273,-0.80494 -27.2781,-10.19488 -6.7507,-9.38996 -6.4918,-22.50923 -6.4918,-22.50923 l 0,-38.15802 0,-32.04115 c 0,0 -0.7899,-17.72635 6.2824,-27.59268 z"
+       id="rect4176-0-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zccczccczccczcccz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/androidRemote/logo/logo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 538.48139,119.05758 c -0.32194,0.005 -0.56323,0.10259 -0.6875,0.34374 -2.55729,4.96284 -4.81246,9.89574 -6.84369,15.59361 -0.95417,-0.21552 -1.93593,-0.35747 -2.93747,-0.34375 -0.80332,0.011 -1.59055,0.10951 -2.34373,0.25 0,0 -4.12889,-10.41706 -6.81245,-14.74986 -0.82054,-1.32483 -3.52705,-0.22173 -3.15622,0.81249 1.63727,4.5663 5.64558,15.65611 5.5937,15.65611 -2.5741,1.62936 -4.25676,4.11105 -4.37496,6.93744 -4.49287,0.54737 -8.60771,1.87035 -11.03115,4.93745 -5.04943,6.39053 -3.70571,13.16647 -3.87497,22.74981 -0.16925,9.58333 -1.20418,20.66895 4.37496,26.99977 5.57914,6.33081 14.6441,5.31145 22.24981,5.31245 8.11787,0.001 19.32066,0.23345 24.24979,-5.56245 4.92913,-5.7959 3.50002,-14.93997 3.59372,-23.78105 0.0937,-8.84108 1.63824,-18.26837 -3.84372,-25.46853 -3.44832,-4.52913 -7.98249,-5.56022 -12.81239,-5.68745 -0.47698,-2.43654 -2.16571,-4.69611 -4.53121,-6.24995 0,0 3.58474,-10.34338 5.40621,-16.0936 0.25132,-0.79341 -1.25292,-1.67069 -2.21873,-1.65623 z"
+       id="rect3924-7-9"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.04108691;stroke-miterlimit:4;stroke-opacity:1"
+       d="m 517.60656,190.49445 c -2.22736,0.0551 -3.96395,1.97734 -3.90621,4.31247 0.0577,2.33513 1.8976,4.18004 4.12496,4.12496 l 0,-0.0937 23.28105,0 0,0.125 c 2.22736,0.0551 4.09848,-1.82108 4.15622,-4.15621 0.0577,-2.33513 -1.71011,-4.25739 -3.93747,-4.31247 l -0.125,0 -23.46855,0 c -0.0379,-5.8e-4 -0.0871,-9.4e-4 -0.125,0 z"
+       id="path4011-2-1"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-61-5"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(0.4646386,0,0,0.48513261,412.64042,58.361497)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-6-6-6"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(0.4646386,0,0,0.48513261,400.92176,58.716264)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-0-5-5"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(0.4646386,0,0,0.48513261,396.67179,58.716264)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       id="path4011-7-2-2-9"
+       sodipodi:cx="276.6875"
+       sodipodi:cy="280.36218"
+       sodipodi:rx="4.0625"
+       sodipodi:ry="3.875"
+       d="m 280.75,280.36218 a 4.0625,3.875 0 1 1 -8.125,0 4.0625,3.875 0 1 1 8.125,0 z"
+       transform="matrix(0.60179435,0,0,0.62833795,351.22259,18.767057)"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 511.88786,206.11932 0,5.24995 6.4062,0 -10.49991,25.09353 7.18744,-0.125 9.87491,-24.96853 9.90617,0 9.87491,24.96853 7.21869,0.15625 -10.49991,-25.12478 5.9062,0 0,-5.24995 -35.3747,0 z"
+       id="rect4098-4-8"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.66418058;stroke-miterlimit:4;stroke-opacity:1"
+       d="m 511.47103,153.39082 c 3.73657,-3.80963 12.93664,-3.08864 18.68483,-3.12971 5.74819,-0.041 11.85323,-1.01355 15.90985,3.27875 4.05663,4.2923 2.90371,9.92923 2.83436,15.19975 -0.0695,5.27053 0.99818,10.70476 -2.64936,14.15993 -3.64756,3.45516 -11.94355,3.33291 -17.95076,3.33204 -5.62822,-6e-4 -12.33037,0.59105 -16.45892,-3.18302 -4.12857,-3.77405 -3.36488,-10.38098 -3.23963,-16.09398 0.12522,-5.71301 -0.86695,-9.75409 2.86963,-13.56376 z"
+       id="rect3924-9-0-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zzzzzszzz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 544.93059,1113.2291 c 10.15888,-14.1721 40.08565,-12.335 40.08565,-12.335 l 52.94083,-0.2171 50.83575,0 c 0,0 28.06117,-0.4743 38.02786,13.389 9.96683,13.8632 9.02411,38.7976 9.02411,38.7976 l 0,48.953 0,52.3004 c 0,0 0.2541,19.0086 -9.62568,32.7509 -9.87979,13.7423 -40.73506,13.8072 -40.73506,13.8072 l -46.92541,0 -54.14468,0 c 0,0 -29.48566,-1.1563 -39.18259,-14.6441 -9.69678,-13.4879 -9.3249,-32.3325 -9.3249,-32.3325 l 0,-54.8106 0,-46.0243 c 0,0 -1.13462,-25.4623 9.02412,-39.6345 z"
+       id="rect4176-0-8-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zccczccczccczcccz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/androidRemote/logo/logo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 588.34014,1116.2614 c -0.46244,0 -0.8215,0.1537 -1,0.5 -3.67332,7.1288 -6.89482,14.222 -9.8125,22.4062 -1.37058,-0.3095 -2.78012,-0.5196 -4.21875,-0.5 -1.15389,0.016 -2.29312,0.1733 -3.375,0.375 0,0 -5.92655,-14.9638 -9.78125,-21.1874 -1.17863,-1.903 -5.06392,-0.3293 -4.53125,1.1562 2.35179,6.5591 8.10578,22.5 8.03125,22.5 -3.69746,2.3405 -6.11147,5.9088 -6.28125,9.9688 -6.45361,0.7862 -12.3627,2.688 -15.84375,7.0937 -7.25307,9.1793 -5.31937,18.8908 -5.5625,32.6563 -0.24311,13.7655 -1.7327,29.6875 6.28125,38.7812 8.01394,9.0936 21.01257,7.6235 31.9375,7.625 11.6606,0 27.76349,0.3566 34.84375,-7.9688 7.08026,-8.3252 5.02165,-21.4567 5.15625,-34.1562 0.13459,-12.6993 2.37435,-26.2514 -5.5,-36.5938 -4.95321,-6.5056 -11.46852,-7.9735 -18.40625,-8.1562 -0.68514,-3.5 -3.13342,-6.7681 -6.53125,-9 0,0 5.16487,-14.8341 7.78125,-23.0938 0.361,-1.1396 -1.8002,-2.427 -3.1875,-2.4062 z m -5.71875,44.6875 c 6.22284,-0.1287 12.25476,0.2196 16.625,4.8437 5.82699,6.1656 4.16211,14.2732 4.0625,21.8438 -0.0998,7.5706 1.42687,15.3807 -3.8125,20.3438 -5.2394,4.963 -17.15242,4.7824 -25.78125,4.7812 -8.08444,-8e-4 -17.72595,0.8586 -23.65625,-4.5625 -5.93032,-5.4211 -4.80491,-14.9187 -4.625,-23.125 0.17987,-8.2062 -1.27352,-13.9965 4.09375,-19.4687 5.36725,-5.4721 18.58698,-4.441 26.84375,-4.5 2.06419,-0.015 4.17572,-0.1134 6.25,-0.1563 z m -24.28125,57.9375 c 0.0544,0 0.1331,-9e-4 0.1875,0 l 33.71875,0 0.1875,0 c 3.1994,0.079 5.73915,2.8332 5.65625,6.1875 -0.0829,3.3542 -2.76934,6.0477 -5.96875,5.9687 l 0,-0.1562 -33.46875,0 0,0.125 c -3.1994,0.079 -5.82335,-2.5833 -5.90625,-5.9375 -0.0829,-3.3542 2.39434,-6.1085 5.59375,-6.1875 z m 0.1875,2.875 c -1.93947,0 -3.5,1.5684 -3.5,3.5 0,1.9316 1.56053,3.5 3.5,3.5 1.93947,0 3.53125,-1.5684 3.53125,-3.5 0,-1.9316 -1.59178,-3.5 -3.53125,-3.5 z m 33.71875,0 c -1.49744,0 -2.71875,1.1962 -2.71875,2.6875 0,1.4913 1.22131,2.7187 2.71875,2.7187 1.49744,10e-5 2.71875,-1.2274 2.71875,-2.7187 0,-1.4913 -1.22131,-2.6875 -2.71875,-2.6875 z m -22.9375,0.5 c -1.49744,0 -2.71875,1.2274 -2.71875,2.7188 0,1.4913 1.22131,2.6874 2.71875,2.6874 1.49744,0 2.71875,-1.1961 2.71875,-2.6874 0,-1.4914 -1.22131,-2.7188 -2.71875,-2.7188 z m 6.09375,0 c -1.49744,0 -2.6875,1.2274 -2.6875,2.7188 0,1.4913 1.19006,2.6874 2.6875,2.6874 1.49744,0 2.71875,-1.1961 2.71875,-2.6874 0,-1.4914 -1.22131,-2.7188 -2.71875,-2.7188 z"
+       id="rect3924-7-9-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo9.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="m 551.11162,1242.4453 0,7.5411 9.20194,0 -15.08219,36.0446 10.32412,-0.1795 14.18444,-35.8651 14.22934,0 14.18444,35.8651 10.36901,0.2243 -15.0822,-36.0894 8.48374,0 0,-7.5411 -50.81264,0 z"
+       id="rect4098-4-8-1"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo9.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#649dc9;fill-opacity:1;stroke:none"
+       d="m 431.94908,1298.4934 c 10.15888,-14.1721 40.08565,-12.335 40.08565,-12.335 l 52.94083,-0.2172 50.83575,0 c 0,0 28.06116,-0.4743 38.02786,13.389 9.96683,13.8632 9.02411,38.7976 9.02411,38.7976 l 0,48.953 0,52.3005 c 0,0 0.2541,19.0086 -9.62568,32.7509 -9.87979,13.7422 -40.73506,13.8071 -40.73506,13.8071 l -46.92541,0 -54.14468,0 c 0,0 -29.48566,-1.1563 -39.18259,-14.6441 -9.69678,-13.4879 -9.3249,-32.3324 -9.3249,-32.3324 l 0,-54.8107 0,-46.0243 c 0,0 -1.13462,-25.4622 9.02412,-39.6345 z"
+       id="rect4176-0-8-0-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zccczccczccczcccz"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/androidRemote/logo/logo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 212.06408,1190.6871 c -0.46244,0 -0.8215,0.1537 -1,0.5 -3.67332,7.1288 -6.89482,14.222 -9.8125,22.4062 -1.37058,-0.3095 -2.78012,-0.5196 -4.21875,-0.5 -1.15389,0.016 -2.29312,0.1733 -3.375,0.375 0,0 -5.92655,-14.9638 -9.78125,-21.1874 -1.17863,-1.903 -5.06392,-0.3293 -4.53125,1.1562 2.35179,6.5591 8.10578,22.5 8.03125,22.5 -3.69746,2.3405 -6.11147,5.9088 -6.28125,9.9688 -6.45361,0.7862 -12.3627,2.688 -15.84375,7.0937 -7.25307,9.1793 -5.31937,18.8908 -5.5625,32.6563 -0.24311,13.7655 -1.7327,29.6875 6.28125,38.7812 8.01394,9.0936 21.01257,7.6235 31.9375,7.625 11.6606,0 27.76349,0.3566 34.84375,-7.9688 7.08026,-8.3252 5.02165,-21.4567 5.15625,-34.1562 0.13459,-12.6993 2.37435,-26.2514 -5.5,-36.5938 -4.95321,-6.5056 -11.46852,-7.9735 -18.40625,-8.1562 -0.68514,-3.5 -3.13342,-6.7681 -6.53125,-9 0,0 5.16487,-14.8341 7.78125,-23.0938 0.361,-1.1396 -1.8002,-2.427 -3.1875,-2.4062 z m -5.71875,44.6875 c 6.22284,-0.1287 12.25476,0.2196 16.625,4.8437 5.82699,6.1656 4.16211,14.2732 4.0625,21.8438 -0.0998,7.5706 1.42687,15.3807 -3.8125,20.3438 -5.2394,4.963 -17.15242,4.7824 -25.78125,4.7812 -8.08444,-8e-4 -17.72595,0.8586 -23.65625,-4.5625 -5.93032,-5.4211 -4.80491,-14.9187 -4.625,-23.125 0.17987,-8.2062 -1.27352,-13.9965 4.09375,-19.4687 5.36725,-5.4721 18.58698,-4.441 26.84375,-4.5 2.06419,-0.015 4.17572,-0.1134 6.25,-0.1563 z m -24.28125,57.9375 c 0.0544,0 0.1331,-9e-4 0.1875,0 l 33.71875,0 0.1875,0 c 3.1994,0.079 5.73915,2.8332 5.65625,6.1875 -0.0829,3.3542 -2.76934,6.0477 -5.96875,5.9687 l 0,-0.1562 -33.46875,0 0,0.125 c -3.1994,0.079 -5.82335,-2.5833 -5.90625,-5.9375 -0.0829,-3.3542 2.39434,-6.1085 5.59375,-6.1875 z m 0.1875,2.875 c -1.93947,0 -3.5,1.5684 -3.5,3.5 0,1.9316 1.56053,3.5 3.5,3.5 1.93947,0 3.53125,-1.5684 3.53125,-3.5 0,-1.9316 -1.59178,-3.5 -3.53125,-3.5 z m 33.71875,0 c -1.49744,0 -2.71875,1.1962 -2.71875,2.6875 0,1.4913 1.22131,2.7187 2.71875,2.7187 1.49744,10e-5 2.71875,-1.2274 2.71875,-2.7187 0,-1.4913 -1.22131,-2.6875 -2.71875,-2.6875 z m -22.9375,0.5 c -1.49744,0 -2.71875,1.2274 -2.71875,2.7188 0,1.4913 1.22131,2.6874 2.71875,2.6874 1.49744,0 2.71875,-1.1961 2.71875,-2.6874 0,-1.4914 -1.22131,-2.7188 -2.71875,-2.7188 z m 6.09375,0 c -1.49744,0 -2.6875,1.2274 -2.6875,2.7188 0,1.4913 1.19006,2.6874 2.6875,2.6874 1.49744,0 2.71875,-1.1961 2.71875,-2.6874 0,-1.4914 -1.22131,-2.7188 -2.71875,-2.7188 z"
+       id="rect3924-7-9-5-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo10.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 174.83556,1316.871 0,7.5411 9.20194,0 -15.08219,36.0446 10.32412,-0.1795 14.18444,-35.8651 14.22934,0 14.18444,35.8651 10.36901,0.2243 -15.0822,-36.0894 8.48374,0 0,-7.5411 -50.81264,0 z"
+       id="rect4098-4-8-1-1"
+       inkscape:export-filename="/home/zakiya/projects/newTvRemote/remote/css/logo/logo10.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>

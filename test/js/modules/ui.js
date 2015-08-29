@@ -13,21 +13,22 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             connectForm.append($("<legend>").text("Connect to monitor"));
             
             var table = $("<table>", {width: '100%'});
-            var monitorInput = $("<input>", {type: "text", id: "monitorId", value: "", placeholder: "Monitor ID...", 'data-mini': "true", 'data-theme': 'a'});
-            var connectBtn = $("<input>", {type: "button", id: "connect", value:'Connect', 'data-icon': "check", 'data-iconpos': 'right' , 'data-mini': "true", 'data-theme': 'b'});
-            var disconnectBtn = $("<input>", {type: "button", id: "disconnect", disabled: true, value:'Disonnect', 'data-icon': "delete", 'data-iconpos': 'right' , 'data-mini': "true", 'data-theme': 'b'});
+            var monitorInput = $("<td>").append($("<input>", {type: "text", id: "monitorId", value: "", placeholder: "Monitor ID...", 'data-inline': "true", 'data-theme': 'a'}));
+            var connectBtn = $("<td>").append($("<input>", {type: "button", id: "connect", 'data-icon': "check", 'data-iconpos': "notext", 'data-mini': "true", 'data-inline': "true"}));
+            table.append(monitorInput);            
+            table.append(connectBtn);
+            
+            var title = $("<p>", {class: 'info_title'}).text("How to connect to monitor");
+            var connectInfo = $("<p>", {class: 'info_desc'}).text("On the desired machine (laptop, smart tv, playstation, etc). Launch the web browser and go to http://moboremote.com. Type the monitor ID in the field and hit the button.");
+            connectForm.append(title);
+            
+            connectForm.append(table);
 
-            connectForm.append($("<label>", {for: 'url'}).html("Go to:"));
-            var url = $("<p>", {class: 'info_title align-center', id: 'url'}).text("http://moboremote.com");
-            connectForm.append(url);
-            connectForm.append($("<br>"));
-            connectForm.append($("<label>", {for: 'monitorId'}).html("Enter monitor id:"));
-            connectForm.append(monitorInput);
-            connectForm.append($("<br>"));
-            connectForm.append($("<label>", {for: 'connect'}).html("Click connect button"));
-            connectForm.append(connectBtn);
-            connectForm.append(disconnectBtn);
-                        
+            connectForm.append(connectInfo);
+            
+            var disconnectInfo  = $("<p>", {class: 'info_desc'}).text('To disconnect, return to this dialog (click on "connect to monitor") and click on the button next to the monitor ID.');
+            connectForm.append(disconnectInfo);
+            
             connectDiv.append(connectForm);
             
             pageItem.append(connectDiv);
@@ -143,7 +144,7 @@ define(["modules/control", "jquery", "jquerymobile"], function(control) {
             return divItem;
         };
         
-            ui.init = function() {    
+		ui.init = function() {    
             ui.render();
             
             console.log("ui.init");
